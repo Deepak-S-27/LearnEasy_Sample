@@ -19,11 +19,15 @@ import {
   Phone,
   MapPin,
   ClipboardCheck,
+  Trophy,
+  Handshake,
+  UserCircle2,
+  ExternalLink,
   Menu,
   X,
 } from "lucide-react"
 
-type LandingTab = "home" | "course" | "assessment" | "contact"
+type LandingTab = "home" | "course" | "assessment" | "scholarship" | "mentor" | "contact"
 
 const stats = [
   { value: "#1", labelKey: "globalPlatform", highlight: true },
@@ -79,8 +83,148 @@ const testimonials = [
   },
 ]
 
+const scholarships = [
+  {
+    classLabel: "For Tamil Nadu State Board (Class 12 Top Scorers)",
+    programs: [
+      {
+        name: "Tamil Nadu Government Merit Scholarship",
+        amount: "Up to full fee support for eligible degree programs",
+        eligibility: "Tamil Nadu State Board Class 12 pass with top merit score and income criteria",
+        deadline: "July 31, 2026",
+        lessonsProgress: "50/50 lessons completed",
+        testsProgress: "10/10 tests completed",
+        graded: "10 tests graded",
+        website: "https://scholarships.gov.in/",
+        featured: true,
+      },
+      {
+        name: "First Graduate Tuition Fee Concession",
+        amount: "Tuition fee concession in eligible colleges",
+        eligibility: "First graduate in family + high Class 12 score in State Board",
+        deadline: "August 15, 2026",
+        lessonsProgress: "48/50 lessons completed",
+        testsProgress: "9/10 tests completed",
+        graded: "9 tests graded",
+        website: "https://www.tn.gov.in/",
+        featured: true,
+      },
+      {
+        name: "State Board Topper College Support Scheme",
+        amount: "Merit-based support for college admission and first-year expenses",
+        eligibility: "Completed Class 12 (TN State Board) with district/state-level top score",
+        deadline: "June 30, 2026",
+        lessonsProgress: "50/50 lessons completed",
+        testsProgress: "10/10 tests completed",
+        graded: "10 tests graded",
+        website: "https://www.tndge.org/",
+        featured: true,
+      }
+    ],
+  },
+]
+
+const subjectAssessments = [
+  {
+    subject: "Mathematics",
+    chapterAssessments: [
+      "Chapter 1 Test - Sets, Relations and Functions",
+      "Chapter 2 Test - Complex Numbers",
+      "Chapter 3 Test - Matrices and Determinants",
+      "Chapter 4 Test - Vector Algebra",
+      "Chapter 5 Test - Calculus",
+    ],
+    examPapers: {
+      midterm: ["2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+      quarterly: ["2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+      halfYearly: ["2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+      publicExam: ["2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+    },
+  },
+  {
+    subject: "Physics",
+    chapterAssessments: [
+      "Chapter 1 Test - Electrostatics",
+      "Chapter 2 Test - Current Electricity",
+      "Chapter 3 Test - Magnetism",
+      "Chapter 4 Test - Optics",
+      "Chapter 5 Test - Modern Physics",
+    ],
+    examPapers: {
+      midterm: ["2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+      quarterly: ["2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+      halfYearly: ["2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+      publicExam: ["2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+    },
+  },
+  {
+    subject: "Chemistry",
+    chapterAssessments: [
+      "Chapter 1 Test - Solid State",
+      "Chapter 2 Test - Solutions",
+      "Chapter 3 Test - Electrochemistry",
+      "Chapter 4 Test - Organic Reactions",
+      "Chapter 5 Test - Biomolecules",
+    ],
+    examPapers: {
+      midterm: ["2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+      quarterly: ["2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+      halfYearly: ["2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+      publicExam: ["2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+    },
+  },
+]
+
+const chapterOneWordQuestionBank: Record<
+  string,
+  { chapter: string; question: string; options: string[]; answer: string }[]
+> = {
+  Mathematics: [
+    {
+      chapter: "Algebra",
+      question: "A polynomial of degree 2 is called?",
+      options: ["Linear", "Quadratic", "Cubic", "Binomial"],
+      answer: "Quadratic",
+    },
+    {
+      chapter: "Calculus",
+      question: "Derivative gives rate of?",
+      options: ["Area", "Change", "Volume", "Mean"],
+      answer: "Change",
+    },
+  ],
+  Physics: [
+    {
+      chapter: "Motion",
+      question: "SI unit of force?",
+      options: ["Joule", "Newton", "Watt", "Pascal"],
+      answer: "Newton",
+    },
+    {
+      chapter: "Waves",
+      question: "Unit of frequency?",
+      options: ["Ohm", "Hertz", "Tesla", "Kelvin"],
+      answer: "Hertz",
+    },
+  ],
+  Chemistry: [
+    {
+      chapter: "Atomic Structure",
+      question: "Negatively charged particle?",
+      options: ["Proton", "Neutron", "Electron", "Photon"],
+      answer: "Electron",
+    },
+    {
+      chapter: "Periodic Table",
+      question: "Group 18 elements are?",
+      options: ["Halogens", "Alkali", "Noble gases", "Lanthanides"],
+      answer: "Noble gases",
+    },
+  ],
+}
+
 export function LandingPage() {
-  const { t, setCurrentPage, isLoggedIn, user } = useApp()
+  const { t, setCurrentPage, isLoggedIn, user, setInitialChatMessage } = useApp()
   const [activeTab, setActiveTab] = useState<LandingTab>("home")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -115,12 +259,20 @@ export function LandingPage() {
     { key: "home", labelKey: "home" },
     { key: "course", labelKey: "course" },
     { key: "assessment", labelKey: "assessment" },
+    { key: "scholarship", labelKey: "scholarship" },
+    { key: "mentor", labelKey: "mentor" },
     { key: "contact", labelKey: "contact" },
   ]
 
   const handleNavClick = (tab: LandingTab) => {
     setActiveTab(tab)
     setMobileMenuOpen(false)
+  }
+
+  const handleMentorConnect = (mentorName: string, mentorRole: string) => {
+    const securePrompt = `Start a private and official mentor conversation with ${mentorName} (${mentorRole}). Share my study goals, ask for guidance, and keep this discussion confidential and professional.`
+    setInitialChatMessage(securePrompt)
+    setCurrentPage("chat")
   }
 
   return (
@@ -157,10 +309,19 @@ export function LandingPage() {
           <div className="flex items-center gap-2">
             <LanguageSelector />
             {isAuthenticated ? (
-              <span className="hidden sm:inline text-sm font-semibold text-foreground">
-                {t("welcome")},{" "}
-                <span className="text-primary">{studentName}</span>
-              </span>
+              <div className="hidden sm:flex items-center gap-2">
+                <button
+                  onClick={() => setCurrentPage("profile")}
+                  className="h-9 w-9 rounded-xl bg-secondary flex items-center justify-center hover:bg-secondary/80 active:scale-[0.98] transition-all"
+                  aria-label="Open profile"
+                >
+                  <UserCircle2 className="h-5 w-5 text-primary" />
+                </button>
+                <span className="text-sm font-semibold text-foreground">
+                  {t("welcome")},{" "}
+                  <span className="text-primary">{studentName}</span>
+                </span>
+              </div>
             ) : (
               <>
                 <button
@@ -230,6 +391,8 @@ export function LandingPage() {
       {activeTab === "home" && <HomeSection t={t} onGetStarted={handleGetStarted} onAiHelp={handleAiHelp} />}
       {activeTab === "course" && <CourseSection t={t} onGetStarted={handleGetStarted} />}
       {activeTab === "assessment" && <AssessmentSection t={t} />}
+      {activeTab === "scholarship" && <ScholarshipSection t={t} />}
+      {activeTab === "mentor" && <MentorSection t={t} onConnect={handleMentorConnect} />}
       {activeTab === "contact" && <ContactSection t={t} />}
 
       {/* Footer */}
@@ -639,9 +802,13 @@ function CourseSection({ t, onGetStarted }: { t: (key: string) => string; onGetS
 
 /* ===== ASSESSMENT SECTION ===== */
 function AssessmentSection({ t }: { t: (key: string) => string }) {
+  const [selectedSubject, setSelectedSubject] = useState<string | null>(null)
+  const activeSubject = subjectAssessments.find((item) => item.subject === selectedSubject)
+
   return (
     <section className="py-16 lg:py-24">
-      <div className="max-w-3xl mx-auto px-5 lg:px-8 text-center">
+      <div className="max-w-6xl mx-auto px-5 lg:px-8">
+        <div className="text-center">
         <div className="h-20 w-20 rounded-3xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
           <ClipboardCheck className="h-10 w-10 text-primary" />
         </div>
@@ -651,15 +818,300 @@ function AssessmentSection({ t }: { t: (key: string) => string }) {
         <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-10 text-pretty">
           {t("assessmentDesc")}
         </p>
+        </div>
 
-        <div className="bg-secondary/70 rounded-3xl p-8 lg:p-12 border border-border">
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary font-semibold text-sm px-4 py-2 rounded-full mb-4">
-            <Sparkles className="h-4 w-4" />
-            {t("comingSoon")}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+          {subjectAssessments.map((item) => (
+            <button
+              key={item.subject}
+              type="button"
+              onClick={() => setSelectedSubject(item.subject)}
+              className={`text-left rounded-2xl border p-5 transition-all ${
+                selectedSubject === item.subject
+                  ? "bg-blue-600 border-blue-700 text-white shadow-lg"
+                  : "bg-card border-border hover:border-blue-300 hover:bg-blue-50"
+              }`}
+            >
+              <p className={`text-xs font-semibold ${selectedSubject === item.subject ? "text-blue-100" : "text-primary"}`}>
+                TN State Board
+              </p>
+              <h3 className="text-xl font-bold mt-1">{item.subject}</h3>
+              <p className={`text-sm mt-2 ${selectedSubject === item.subject ? "text-blue-100" : "text-muted-foreground"}`}>
+                Open chapter-wise tests and previous year question papers
+              </p>
+            </button>
+          ))}
+        </div>
+
+        {activeSubject && (
+          <div className="bg-blue-50 border border-blue-200 rounded-2xl p-5 mb-8">
+            <h3 className="text-xl font-bold text-blue-900 mb-1">
+              {activeSubject.subject} - Chapter Wise Test Assessments
+            </h3>
+            <p className="text-sm text-blue-700 mb-4">
+              Designed for Tamil Nadu State Board Class 12 top-score preparation and college readiness.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {activeSubject.chapterAssessments.map((chapterTest, idx) => (
+                <button
+                  key={`${activeSubject.subject}-chapter-${idx}`}
+                  type="button"
+                  className="text-left rounded-xl bg-white border border-blue-200 p-3 hover:border-blue-400 hover:bg-blue-100 transition-colors"
+                >
+                  <p className="text-sm font-semibold text-blue-900">{chapterTest}</p>
+                  <p className="text-xs text-blue-700 mt-1">Start assessment</p>
+                </button>
+              ))}
+            </div>
+
+            <div className="mt-5">
+              <h4 className="text-base font-semibold text-blue-900 mb-3">
+                Previous Year Question Papers (Below Test Assessments)
+              </h4>
+              <div className="space-y-3 text-sm">
+                <div className="rounded-xl bg-white p-3 border border-blue-200">
+                  <p className="text-blue-900 font-medium">Midterm Papers (2020-now)</p>
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {activeSubject.examPapers.midterm.map((year) => (
+                      <a
+                        key={`${activeSubject.subject}-midterm-${year}`}
+                        href="#"
+                        className="text-xs px-2 py-1 rounded-full border border-blue-200 bg-blue-50 hover:bg-blue-100 transition-colors"
+                      >
+                        {year}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                <div className="rounded-xl bg-white p-3 border border-blue-200">
+                  <p className="text-blue-900 font-medium">Quarterly Papers (2020-now)</p>
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {activeSubject.examPapers.quarterly.map((year) => (
+                      <a
+                        key={`${activeSubject.subject}-quarterly-${year}`}
+                        href="#"
+                        className="text-xs px-2 py-1 rounded-full border border-blue-200 bg-blue-50 hover:bg-blue-100 transition-colors"
+                      >
+                        {year}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                <div className="rounded-xl bg-white p-3 border border-blue-200">
+                  <p className="text-blue-900 font-medium">Half-yearly Papers (2020-now)</p>
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {activeSubject.examPapers.halfYearly.map((year) => (
+                      <a
+                        key={`${activeSubject.subject}-half-${year}`}
+                        href="#"
+                        className="text-xs px-2 py-1 rounded-full border border-blue-200 bg-blue-50 hover:bg-blue-100 transition-colors"
+                      >
+                        {year}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                <div className="rounded-xl bg-white p-3 border border-blue-200">
+                  <p className="text-blue-900 font-medium">Public Exam Papers (2020-now)</p>
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {activeSubject.examPapers.publicExam.map((year) => (
+                      <a
+                        key={`${activeSubject.subject}-public-${year}`}
+                        href="#"
+                        className="text-xs px-2 py-1 rounded-full border border-blue-200 bg-blue-50 hover:bg-blue-100 transition-colors"
+                      >
+                        {year}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="text-muted-foreground text-sm lg:text-base leading-relaxed max-w-md mx-auto text-pretty">
-            {t("assessmentComingSoonDesc")}
+        )}
+
+        <div className="mt-8 bg-card rounded-2xl border border-border p-5">
+          <div className="flex items-center gap-2 mb-4">
+            <Sparkles className="h-4 w-4 text-primary" />
+            <h3 className="text-lg font-bold text-foreground">
+              Chapter-wise One Word Answers (Auto MCQ Set)
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {Object.entries(chapterOneWordQuestionBank).map(([subject, questions]) => (
+              <div key={subject} className="rounded-xl bg-secondary/60 p-4">
+                <p className="text-base font-semibold text-foreground mb-3">{subject}</p>
+                <div className="space-y-3">
+                  {questions.map((q, idx) => (
+                    <div key={`${subject}-${idx}`} className="rounded-lg bg-background border border-border p-3">
+                      <p className="text-xs font-medium text-muted-foreground mb-1">{q.chapter}</p>
+                      <p className="text-sm font-medium text-foreground">{q.question}</p>
+                      <div className="flex flex-wrap gap-1.5 mt-2">
+                        {q.options.map((option) => (
+                          <span
+                            key={`${subject}-${idx}-${option}`}
+                            className={`text-xs px-2 py-1 rounded-full border ${
+                              option === q.answer
+                                ? "bg-primary/10 text-primary border-primary/30"
+                                : "bg-background text-muted-foreground border-border"
+                            }`}
+                          >
+                            {option}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ===== SCHOLARSHIP SECTION ===== */
+function ScholarshipSection({ t }: { t: (key: string) => string }) {
+  const highestScore = 96
+  const studentScore = 92
+  const isEligible = studentScore >= highestScore
+
+  return (
+    <section className="py-16 lg:py-24">
+      <div className="max-w-6xl mx-auto px-5 lg:px-8 text-center">
+        <div className="h-20 w-20 rounded-3xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+          <Trophy className="h-10 w-10 text-primary" />
+        </div>
+        <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance mb-4">
+          {t("scholarshipTitle")}
+        </h2>
+        <p className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-8 text-pretty">
+          {t("scholarshipDesc")}
+        </p>
+
+        <div className="bg-card border border-border rounded-3xl p-6 lg:p-8 text-left mb-8">
+          <div className="flex items-center justify-between mb-3">
+            <p className="text-sm text-muted-foreground">Highest score</p>
+            <p className="text-sm font-semibold text-foreground">{highestScore}%</p>
+          </div>
+          <div className="flex items-center justify-between mb-6">
+            <p className="text-sm text-muted-foreground">Your score</p>
+            <p className="text-sm font-semibold text-foreground">{studentScore}%</p>
+          </div>
+          <button
+            type="button"
+            disabled={!isEligible}
+            className={`w-full h-11 rounded-xl text-sm font-semibold transition-all ${
+              isEligible
+                ? "bg-primary text-primary-foreground hover:opacity-90"
+                : "bg-secondary text-muted-foreground cursor-not-allowed"
+            }`}
+          >
+            {isEligible ? t("applyScholarship") : t("notEligibleScholarship")}
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 text-left">
+          {scholarships.map((bucket) => (
+            bucket.programs.map((program) => (
+              <div key={program.name} className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden">
+                <div className="h-2 bg-gradient-to-r from-blue-500 to-blue-700" />
+                <div className="p-5">
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <div>
+                      <p className="text-xs font-semibold text-primary mb-1">{bucket.classLabel}</p>
+                      <h3 className="text-xl font-bold text-foreground leading-tight">{program.name}</h3>
+                    </div>
+                    {program.featured && (
+                      <span className="text-[11px] px-2 py-1 rounded-full bg-blue-100 text-blue-700 font-semibold">
+                        Featured
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-base font-semibold text-blue-700 mb-3">{program.amount}</p>
+                  <p className="text-sm text-muted-foreground mb-1">{program.eligibility}</p>
+                  <p className="text-sm text-muted-foreground mb-3">Deadline: {program.deadline}</p>
+                  <div className="rounded-xl bg-secondary/60 p-3 mb-4">
+                    <p className="text-xs text-muted-foreground">{program.lessonsProgress}</p>
+                    <p className="text-xs text-muted-foreground">{program.testsProgress}</p>
+                    <p className="text-xs text-muted-foreground">{program.graded}</p>
+                  </div>
+                  <button
+                    type="button"
+                    className="w-full h-10 rounded-lg bg-gradient-to-r from-blue-500 to-blue-700 text-white text-sm font-semibold hover:opacity-90 transition-opacity"
+                  >
+                    Apply Now
+                  </button>
+                  <a
+                    href={program.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 w-full h-10 rounded-lg border border-border text-sm font-semibold text-primary flex items-center justify-center gap-1.5 hover:bg-secondary transition-colors"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Visit Website
+                  </a>
+                </div>
+              </div>
+            ))
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ===== MENTOR SECTION ===== */
+function MentorSection({ t, onConnect }: { t: (key: string) => string; onConnect: (name: string, role: string) => void }) {
+  const mentors = [
+    { name: "Ananya Rao", role: "Data Analyst Mentor", score: "98%", image: "/mentor-ananya.svg" },
+    { name: "Vikram S", role: "Previous Year Topper", score: "97%", image: "/mentor-vikram.svg" },
+    { name: "Meera K", role: "Senior Student Mentor", score: "96%", image: "/mentor-meera.svg" },
+  ]
+
+  return (
+    <section className="py-16 lg:py-24">
+      <div className="max-w-6xl mx-auto px-5 lg:px-8">
+        <div className="text-center mb-10">
+          <div className="h-20 w-20 rounded-3xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+            <Handshake className="h-10 w-10 text-primary" />
+          </div>
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance mb-4">
+            {t("mentorTitle")}
+          </h2>
+          <p className="text-muted-foreground text-base lg:text-lg leading-relaxed text-pretty max-w-2xl mx-auto">
+            {t("mentorDesc")}
           </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {mentors.map((mentor) => (
+            <div key={mentor.name} className="bg-card rounded-2xl border border-border p-5">
+              <div className="relative h-36 w-full rounded-xl overflow-hidden mb-4 border border-border/60">
+                <Image
+                  src={mentor.image}
+                  alt={mentor.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <p className="text-base font-bold text-foreground">{mentor.name}</p>
+              <p className="text-sm text-muted-foreground mt-1">{mentor.role}</p>
+              <p className="text-xs text-primary mt-2">Highest score: {mentor.score}</p>
+              <button
+                type="button"
+                className="mt-4 w-full h-10 rounded-xl bg-secondary text-secondary-foreground text-sm font-semibold hover:bg-blue-600 hover:text-white transition-colors"
+                onClick={() => onConnect(mentor.name, mentor.role)}
+              >
+                {t("connectNow")}
+              </button>
+              <p className="text-[11px] text-muted-foreground mt-2">
+                Private and official mentoring messages only.
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

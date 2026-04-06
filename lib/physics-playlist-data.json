@@ -1,0 +1,1982 @@
+[
+  {
+    "chapter": 1,
+    "name": "Unit 1 - Electrostatics",
+    "exercises": [
+      {
+        "id": "u1-1",
+        "label": "Class 12 Physics Electrostatics Historical Background of Charges - Part 1 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=DUz5zsk4uz8"
+      },
+      {
+        "id": "u1-2",
+        "label": "Class 12 Physics Electrostatics Basic Properties of Charges part 2 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=z6Un9HEs3jk"
+      },
+      {
+        "id": "u1-3",
+        "label": "Class 12 Physics Electrostatics Coulomb\u2019s law part 3 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=8pm1KA3ftls"
+      },
+      {
+        "id": "u1-4",
+        "label": "Class 12 Physics | Example 1.1 | Electrostatics Problem Part 4 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=Isb7VSIzOOA"
+      },
+      {
+        "id": "u1-5",
+        "label": "Class 12 Physics | Example 1.2 | Electrostatics Problem - Part 5 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=nOulEaQwNSQ"
+      },
+      {
+        "id": "u1-6",
+        "label": "Class 12 Physics | Example 1.3 | Electrostatics Problem - Part 6 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=vHjxkEKCBz8"
+      },
+      {
+        "id": "u1-7",
+        "label": "Class 12 Physics | Example 1.4 | Electrostatics Problem - Part 7 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=R0MsJ3wV2nE"
+      },
+      {
+        "id": "u1-8",
+        "label": "Class 12 Physics | Superposition Principle | Electrostatics - Part 8 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=_D8L5HzTn5s"
+      },
+      {
+        "id": "u1-9",
+        "label": "Class 12 Physics | Example 1.5 | Electrostatics Problem - Part 9 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=E6wtVFCtnvE"
+      },
+      {
+        "id": "u1-10",
+        "label": "Class 12 Physics | Electric Field & Properties | Electrostatics - Part 10 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=mPzEH1klIzY"
+      },
+      {
+        "id": "u1-11",
+        "label": "TN New Syllabus Class 12 Physics | Example 1.6 | Electrostatics Problem - Part 11 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=cPtYJyCG4Tg"
+      },
+      {
+        "id": "u1-12",
+        "label": "Class 12 Physics | Electric Field due to the system of point Charges | Electrostatics - Part 12",
+        "url": "https://www.youtube.com/watch?v=61-c4Lg-Jrk"
+      },
+      {
+        "id": "u1-13",
+        "label": "Class 12 Physics | Example 1.7 | Electrostatics Problem - Part 13 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=se-oKrOaQBc"
+      },
+      {
+        "id": "u1-14",
+        "label": "Class 12 Physics | Electrostatics l Continuous Charge Distribution l Part 14 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=p3QZXFyZ_TM"
+      },
+      {
+        "id": "u1-15",
+        "label": "Class 12 Physics | Example 1.8 | Electrostatics Problem Part 15 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=HxgqZnHR2Yc"
+      },
+      {
+        "id": "u1-16",
+        "label": "Class 12 Physics | Electrostatics l Electric Field Lines part -16 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=zZ9cV-KxvVc"
+      },
+      {
+        "id": "u1-17",
+        "label": "Class 12 Physics | Example 1.9 | Electrostatics Problem Part 17 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=_uw2XTYnV-g"
+      },
+      {
+        "id": "u1-18",
+        "label": "Class 12 Physics | Electrostatics l Electric Dipole part - 18 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=qhlSDMEN7kY"
+      },
+      {
+        "id": "u1-19",
+        "label": "Class 12 Physics | Example 1.10 | Electrostatics Problem Part 19 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=pqp3o8GIRVA"
+      },
+      {
+        "id": "u1-20",
+        "label": "12th Physics l Electrostatics l Dipole Moment of Water l Part 20",
+        "url": "https://www.youtube.com/watch?v=y62FrYKDytU"
+      },
+      {
+        "id": "u1-21",
+        "label": "12th Physics Tamil Nadu New Syllabus Electrostatics  Electric field due to a dipole part 21",
+        "url": "https://www.youtube.com/watch?v=M8frD0RAgNY"
+      },
+      {
+        "id": "u1-22",
+        "label": "12th Physics | Torque by Electric dipole  - Electrostatics -  Part 22 | Tamil Nadu New Syllabus",
+        "url": "https://www.youtube.com/watch?v=R34McIXPYpk"
+      },
+      {
+        "id": "u1-23",
+        "label": "12th Physics | Example 1.11 - Electrostatics -  Part 23 | Tamil Nadu New Syllabus",
+        "url": "https://www.youtube.com/watch?v=xvdg7wtD_JM"
+      },
+      {
+        "id": "u1-24",
+        "label": "12th physics l Tamil Nadu State board l Electrostatics l Microwave Oven Principle part 24",
+        "url": "https://www.youtube.com/watch?v=qyGgrtdk330"
+      },
+      {
+        "id": "u1-25",
+        "label": "12th physics |  Example 1.12 Part -27 | Electrostatics | Tamil Nadu State board",
+        "url": "https://www.youtube.com/watch?v=d_pAQyeVoMI"
+      },
+      {
+        "id": "u1-26",
+        "label": "12th physics |  Example 1.13 Part -28 | Electrostatics | Tamil Nadu State board",
+        "url": "https://www.youtube.com/watch?v=4SOE4lbQCfo"
+      },
+      {
+        "id": "u1-27",
+        "label": "12th physics |  Potential Due to an Electric Dipole | Electrostatics | Part -29 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=wE6vQy-y8Kg"
+      },
+      {
+        "id": "u1-28",
+        "label": "12th Physics l Equipotential Surface | TN New Syllabus | Electrostatics | Part - 30 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=A9_F0XLhd3M"
+      },
+      {
+        "id": "u1-29",
+        "label": "12th Physics l Relation between E & V | TN New Syllabus | Electrostatics | Part - 31 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=MUPZOy0VH50"
+      },
+      {
+        "id": "u1-30",
+        "label": "12th Physics l Example 1.14 | TN New Syllabus | Electrostatics | Part - 32 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=NNUgtyVrjrk"
+      },
+      {
+        "id": "u1-31",
+        "label": "12th Physics l Electrostatics Potential Energy for collection of point charges | Part - 33",
+        "url": "https://www.youtube.com/watch?v=E94qlRa3IIA"
+      },
+      {
+        "id": "u1-32",
+        "label": "12th Physics l Example 1.15 | TN New Syllabus | Electrostatics | Part - 34 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=DBoIxOSEeuE"
+      },
+      {
+        "id": "u1-33",
+        "label": "Class 12 Physics | Example 1.16 | Electrostatics Problem - Part 36 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=tjm_eDSm3vM"
+      },
+      {
+        "id": "u1-34",
+        "label": "Class 12 Physics | Electrostatics l Electric Flux  - Part 37 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=HGM-vN9Edvg"
+      },
+      {
+        "id": "u1-35",
+        "label": "Class 12 Physics | Example 1.17 | Electrostatics Problem - Part 38 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=YMSyuETxmpE"
+      },
+      {
+        "id": "u1-36",
+        "label": "Class 12 Physics | Electrostatics l Electric Flux in Non Uniform Electric Field Part 39",
+        "url": "https://www.youtube.com/watch?v=jXj77HVd-X0"
+      },
+      {
+        "id": "u1-37",
+        "label": "Class 12 Physics | Electrostatics l Electric Flux for Closed Surfaces Part 40 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=dsx9Wzerlr4"
+      },
+      {
+        "id": "u1-38",
+        "label": "12th  Physics l TN new syllabus | Electrostatics l Gauss Law - Part 41 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=0RVRnurtFH8"
+      },
+      {
+        "id": "u1-39",
+        "label": "12th  Physics l  Example 1.18 | Electrostatics |  - Part 42 TN new syllabus|",
+        "url": "https://www.youtube.com/watch?v=Uqq0A-bzfJg"
+      },
+      {
+        "id": "u1-40",
+        "label": "12th Physics in Tamil | Example 1.19 | Electrostatics Problem - Part 50 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=fZErH-R6pAY"
+      },
+      {
+        "id": "u1-41",
+        "label": "Class 12 Physics | Example 1.20 | Electrostatics Problem - Part 54 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=2XUZovQJY8U"
+      },
+      {
+        "id": "u1-42",
+        "label": "12th Physics in Tamil | Energy Stored in Capacitor l Electrostatics  - Part 55",
+        "url": "https://www.youtube.com/watch?v=p0QaHv0z_2g"
+      },
+      {
+        "id": "u1-43",
+        "label": "12th Physics in Tamil | Applications of Capacitor l Electrostatics - Part 56 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=J97_3zAnJxs"
+      },
+      {
+        "id": "u1-44",
+        "label": "Class 12 Physics Electrostatics l Effect of Dielectric in Capacitors  - Part 57 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=kPYzRwm3JhE"
+      },
+      {
+        "id": "u1-45",
+        "label": "Class 12 Physics | Example 1.21 | Electrostatics Problem - Part 58 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=4pOYgmREE6o"
+      },
+      {
+        "id": "u1-46",
+        "label": "Class 12 Physics Electrostatics l Capacitors in Series and Parallel - Part 59 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=IpUlve2PMIM"
+      },
+      {
+        "id": "u1-47",
+        "label": "Class 12 Physics | Example 1.22 | Electrostatics Problem - Part 60 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=Osf9y4qAn34"
+      },
+      {
+        "id": "u1-48",
+        "label": "Class 12 Physics Electrostatics l Distribution of Charges in a Conductor - Part 61 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=FZhnIPbqUNs"
+      },
+      {
+        "id": "u1-49",
+        "label": "Class 12 Physics | Example 1.23 | Electrostatics Problem - Part 62 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=AiLq6OQ26SQ"
+      },
+      {
+        "id": "u1-50",
+        "label": "Class 12 Physics Electrostatics l Action at Point Corona Discharge - Part 63 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=CR8B2n0Gc7w"
+      },
+      {
+        "id": "u1-51",
+        "label": "Class 12 Physics Electrostatics l Lightning Arrester - Part 64 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=-Nngn7lLbcA"
+      },
+      {
+        "id": "u1-52",
+        "label": "Class 12 Physics Electrostatics l Van de Graaff Generator l Tamil Nadu Syllabus - Part 65",
+        "url": "https://www.youtube.com/watch?v=a9K8OiozhhY"
+      },
+      {
+        "id": "u1-53",
+        "label": "Class 12 Physics | Example 1.24 | Electrostatics Problem - Part 66 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=oW8Tm5k8YXk"
+      },
+      {
+        "id": "u1-54",
+        "label": "Class 12 Physics | Multiple choice question -1  | Electrostatics  - Part 67 | Book Back Evaluation",
+        "url": "https://www.youtube.com/watch?v=JD3brwZaMLQ"
+      },
+      {
+        "id": "u1-55",
+        "label": "Class 12 Physics | Multiple choice question -2 | Electrostatics  - Part 68 | Book Back Evaluation",
+        "url": "https://www.youtube.com/watch?v=3J59Ue2T8DY"
+      }
+    ]
+  },
+  {
+    "chapter": 2,
+    "name": "Unit 2 - Current Electricity",
+    "exercises": [
+      {
+        "id": "u2-1",
+        "label": "Class 12 Physics l Current Electricity l Electric Current - Part 1 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=iXfn35xPfL4"
+      },
+      {
+        "id": "u2-2",
+        "label": "Class 12 Physics l Current Electricity l Example 2.1 - Part 2 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=W31NDSVfda0"
+      },
+      {
+        "id": "u2-3",
+        "label": "Class 12 Physics l Current Electricity l conventional current  - Part 3 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=t0aGYadZC8Q"
+      },
+      {
+        "id": "u2-4",
+        "label": "Class 12 Physics l Current Electricity l Drift Velocity - Part 4 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=jEY1z-CCF-o"
+      },
+      {
+        "id": "u2-5",
+        "label": "Class 12 Physics l Current Electricity l Example 2.2 - Part 5 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=ovN1CSQxB6g"
+      },
+      {
+        "id": "u2-6",
+        "label": "Class 12 Physics l Current Electricity l Microscopic Model of Current - Part 6 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=vg1htJc15KM"
+      },
+      {
+        "id": "u2-7",
+        "label": "Class 12 Physics l Current Electricity l Example 2.3 - Part 7 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=G-jM1uwZEGg"
+      },
+      {
+        "id": "u2-8",
+        "label": "Class 12 Physics l Current Electricity l Example 2.4 - Part 8 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=RZt16KkHbYM"
+      },
+      {
+        "id": "u2-9",
+        "label": "Class 12 Physics l Current Electricity l Ohm's Law - Part 9 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=fefuVo2mvt4"
+      },
+      {
+        "id": "u2-10",
+        "label": "Class 12 Physics l Current Electricity l Example 2.5 - Part 10 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=__Au9zpgXcs"
+      },
+      {
+        "id": "u2-11",
+        "label": "TN New Syllabus Class 12 Physics l Current Electricity l Resistivity - Part 11 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=Hjmg1pmqw8g"
+      },
+      {
+        "id": "u2-12",
+        "label": "Class 12 Physics l Current Electricity l Example 2.6 - Part 12 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=jNuG-KdmVIE"
+      },
+      {
+        "id": "u2-13",
+        "label": "Class 12 Physics l Current Electricity l Example 2.7 - Part 13 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=K6QRXOZBfs8"
+      },
+      {
+        "id": "u2-14",
+        "label": "Class 12 Physics l Current Electricity l Resistors in Series and Parallel - Part 14",
+        "url": "https://www.youtube.com/watch?v=Bi0Y_ndrhRY"
+      },
+      {
+        "id": "u2-15",
+        "label": "Class 12 Physics l Current Electricity l Example 2.8- Part 15",
+        "url": "https://www.youtube.com/watch?v=hRGGx9EBPVM"
+      },
+      {
+        "id": "u2-16",
+        "label": "Class 12 Physics l Current Electricity l Example 2.9- Part 16",
+        "url": "https://www.youtube.com/watch?v=JA38qs3x6QM"
+      },
+      {
+        "id": "u2-17",
+        "label": "Class 12 Physics l Current Electricity l Example 2.10- Part 17",
+        "url": "https://www.youtube.com/watch?v=6DqoCK3hhk4"
+      },
+      {
+        "id": "u2-18",
+        "label": "Class 12 Physics l Current Electricity l Example 2.11 - Part 18",
+        "url": "https://www.youtube.com/watch?v=YuS1wC1I0Ag"
+      },
+      {
+        "id": "u2-19",
+        "label": "Class 12 Physics l Current Electricity l Example 2.12 - Part 19",
+        "url": "https://www.youtube.com/watch?v=FDMKZxh66mo"
+      },
+      {
+        "id": "u2-20",
+        "label": "Class 12 Physics l Current Electricity l Color Code for Resistors - Part 20",
+        "url": "https://www.youtube.com/watch?v=9ILxQjUcOTc"
+      },
+      {
+        "id": "u2-21",
+        "label": "Class 12 Physics l Current Electricity l Temperature Dependency of Resistivity - Part 21",
+        "url": "https://www.youtube.com/watch?v=tOMc7amhuYs"
+      },
+      {
+        "id": "u2-22",
+        "label": "Class 12 Physics l Current Electricity l Example 2.13 - Part 22",
+        "url": "https://www.youtube.com/watch?v=8da_qKfeM-M"
+      },
+      {
+        "id": "u2-23",
+        "label": "Class 12 Physics l Current Electricity l Example 2.14 - Part 23",
+        "url": "https://www.youtube.com/watch?v=O1_ynsIc4rY"
+      },
+      {
+        "id": "u2-24",
+        "label": "Class 12 Physics l Current Electricity l Energy and Power - Part 24",
+        "url": "https://www.youtube.com/watch?v=ApdGcvgkcfw"
+      },
+      {
+        "id": "u2-25",
+        "label": "Class 12 Physics l Current Electricity l Example 2.15 - Part 25",
+        "url": "https://www.youtube.com/watch?v=esubOL7huq4"
+      },
+      {
+        "id": "u2-26",
+        "label": "Class 12 Physics l Current Electricity l Example 2.16 - Part 26",
+        "url": "https://www.youtube.com/watch?v=ZDtywIZsuSU"
+      },
+      {
+        "id": "u2-27",
+        "label": "Class 12 Physics l Current Electricity l Electric cells and Batteries- Part 27",
+        "url": "https://www.youtube.com/watch?v=oxyjuU8baN8"
+      },
+      {
+        "id": "u2-28",
+        "label": "Class 12 Physics l Current Electricity l Emf and Determining Internal Resistance of a cell- Part 28",
+        "url": "https://www.youtube.com/watch?v=Fp6SRn-CDmo"
+      },
+      {
+        "id": "u2-29",
+        "label": "Class 12 Physics l Current Electricity l Example 2.17 - Part 29",
+        "url": "https://www.youtube.com/watch?v=cs6-r62FiFo"
+      },
+      {
+        "id": "u2-30",
+        "label": "Class 12 Physics l Cells in Series - Part 30 | Current Electricity",
+        "url": "https://www.youtube.com/watch?v=cC3V9AXzOr8"
+      },
+      {
+        "id": "u2-31",
+        "label": "Class 12 Physics l Current Electricity l Example 2.18 - Part 31",
+        "url": "https://www.youtube.com/watch?v=OhtpwqeS2GQ"
+      },
+      {
+        "id": "u2-32",
+        "label": "Class 12 Physics | Cells in Parallel l Current Electricity  - Part 32",
+        "url": "https://www.youtube.com/watch?v=t5_k7Xi0ETc"
+      },
+      {
+        "id": "u2-33",
+        "label": "Class 12 Physics l Current Electricity l Example 2.19 - Part 33",
+        "url": "https://www.youtube.com/watch?v=4yx_q0euCuU"
+      },
+      {
+        "id": "u2-34",
+        "label": "Class 12 Physics l Kirchhoff's First Rule l Current Electricity l Part 34",
+        "url": "https://www.youtube.com/watch?v=nhAWZm_R7JU"
+      },
+      {
+        "id": "u2-35",
+        "label": "Class 12 Physics l Current Electricity l Example 2.20 - Part 35",
+        "url": "https://www.youtube.com/watch?v=ro0FvFJcdik"
+      },
+      {
+        "id": "u2-36",
+        "label": "Class 12 Physics l Kirchhoff's Second Rule l Current Electricity  Part 36",
+        "url": "https://www.youtube.com/watch?v=8aaCbwC40CY"
+      },
+      {
+        "id": "u2-37",
+        "label": "Class 12 Physics l Current Electricity l Example 2.21 - Part 37",
+        "url": "https://www.youtube.com/watch?v=8FGJXHdaAys"
+      },
+      {
+        "id": "u2-38",
+        "label": "Class 12 Physics l Current Electricity l Example 2.22 - Part 38",
+        "url": "https://www.youtube.com/watch?v=nBP47gyhQtQ"
+      },
+      {
+        "id": "u2-39",
+        "label": "Class 12 Physics l Wheatstone's Bridge l Current Electricity Part 39",
+        "url": "https://www.youtube.com/watch?v=dgsGZkgyS6M"
+      },
+      {
+        "id": "u2-40",
+        "label": "Class 12 Physics l Current Electricity l Example 2.23 - Part 40",
+        "url": "https://www.youtube.com/watch?v=F7ei8HvMi5Q"
+      },
+      {
+        "id": "u2-41",
+        "label": "Class 12 Physics l Current Electricity l Example 2.24 - Part 41",
+        "url": "https://www.youtube.com/watch?v=yeBsxIFgYkw"
+      },
+      {
+        "id": "u2-42",
+        "label": "Class 12 Physics l Meter Bridge l Current Electricity Part 42",
+        "url": "https://www.youtube.com/watch?v=7e2SjGkQQSg"
+      },
+      {
+        "id": "u2-43",
+        "label": "Class 12 Physics l Current Electricity l Example 2.25 - Part 43",
+        "url": "https://www.youtube.com/watch?v=s_32-q5hbwY"
+      },
+      {
+        "id": "u2-44",
+        "label": "Class 12 Physics l Current Electricity l Example 2.26 - Part 44",
+        "url": "https://www.youtube.com/watch?v=jnEfpAwhGho"
+      },
+      {
+        "id": "u2-45",
+        "label": "Class 12 Physics l Potentiometer l Current Electricity Part 45",
+        "url": "https://www.youtube.com/watch?v=PoVYvlJpGzE"
+      },
+      {
+        "id": "u2-46",
+        "label": "Class 12 Physics l Comparison of emf of two cells with Potentiometer l Current Electricity Part 46",
+        "url": "https://www.youtube.com/watch?v=tJ76T6779IA"
+      },
+      {
+        "id": "u2-47",
+        "label": "12 PhysicsMeasurement of Internal resistance of a cells by Potentiometer  Part 47Current Electricity",
+        "url": "https://www.youtube.com/watch?v=UXDllDlMAKE"
+      },
+      {
+        "id": "u2-48",
+        "label": "Class 12 Physics l Heating Effect of Current and Joules Law of Heating l Current Electricity Part 48",
+        "url": "https://www.youtube.com/watch?v=qa-eNhHnP38"
+      },
+      {
+        "id": "u2-49",
+        "label": "Class 12 Physics l Current Electricity l Example 2.27 - Part 49",
+        "url": "https://www.youtube.com/watch?v=pcbzpXp7kds"
+      },
+      {
+        "id": "u2-50",
+        "label": "Class 12 Physics l Applications  of Joules Heating Effect part - 50 | Current Electricity",
+        "url": "https://www.youtube.com/watch?v=-XBPC_NWF88"
+      },
+      {
+        "id": "u2-51",
+        "label": "Class 12 Physics l Current Electricity l Example 2.28 - Part 51",
+        "url": "https://www.youtube.com/watch?v=GMOH0RYvZZU"
+      },
+      {
+        "id": "u2-52",
+        "label": "TN Class 12 Physics l Current Electricity l Thermoelectric Effect- Part 52",
+        "url": "https://www.youtube.com/watch?v=K6ZNJ8SCI9Q"
+      },
+      {
+        "id": "u2-53",
+        "label": "TN Class 12 Physics l Seebeck Effect l Current Electricity  Part 53",
+        "url": "https://www.youtube.com/watch?v=Le9M3yJl5A8"
+      },
+      {
+        "id": "u2-54",
+        "label": "TN Class 12 Physics l Peltier Effect l Current Electricity Part 54",
+        "url": "https://www.youtube.com/watch?v=6QeuU1Kb7KI"
+      },
+      {
+        "id": "u2-55",
+        "label": "TN Class 12 Physics l Thomson Effect l Current Electricity Part 55",
+        "url": "https://www.youtube.com/watch?v=lyMyX179MpA"
+      }
+    ]
+  },
+  {
+    "chapter": 3,
+    "name": "Unit 3 - Magnetism and Magnetic Effects",
+    "exercises": [
+      {
+        "id": "u3-1",
+        "label": "Class 12 Physics l Magnetism and Magnetic Effects of Electric Current l Earth Magnetic Field Part 1",
+        "url": "https://www.youtube.com/watch?v=LuU8En7IB90"
+      },
+      {
+        "id": "u3-2",
+        "label": "Class 12 Physics l Example 3.1 Magnetism and Magnetic Effects of Electric Current Part 2",
+        "url": "https://www.youtube.com/watch?v=4hdtafKHhEI"
+      },
+      {
+        "id": "u3-3",
+        "label": "Class 12 Physics Basic Properties of Magnets Magnetism and MagneticEffects ofElectric Current part 3",
+        "url": "https://www.youtube.com/watch?v=mDxkwWrAkY0"
+      },
+      {
+        "id": "u3-4",
+        "label": "Class 12 Physics l Example 3.2 Magnetism and Magnetic Effects of Electric Current Part 4",
+        "url": "https://www.youtube.com/watch?v=P-0pEMD01sw"
+      },
+      {
+        "id": "u3-5",
+        "label": "Class 12 Physics l Example 3.3 Magnetism and Magnetic Effects of Electric Current Part 5",
+        "url": "https://www.youtube.com/watch?v=H6H_A4NgqFQ"
+      },
+      {
+        "id": "u3-6",
+        "label": "Class 12 Physics l Magnetic Field Lines  |Magnetism and Magnetic Effects of Electric Current  part 6",
+        "url": "https://www.youtube.com/watch?v=2TClyT9b8zc"
+      },
+      {
+        "id": "u3-7",
+        "label": "Class 12 Physics l Magnetic Flux  | Magnetism and Magnetic Effects of Electric Current l  part 7",
+        "url": "https://www.youtube.com/watch?v=IH_Q-0RLUqc"
+      },
+      {
+        "id": "u3-8",
+        "label": "Class 12 Physics Uniform and Non Uniform Magnetic Field Magnetic Effects of Electric Current Part  8",
+        "url": "https://www.youtube.com/watch?v=0pqDX5K3ncI"
+      },
+      {
+        "id": "u3-9",
+        "label": "Class 12 Physics l Example 3.4 Magnetism and Magnetic Effects of Electric Current Part 9",
+        "url": "https://www.youtube.com/watch?v=j42MMdpg4qc"
+      },
+      {
+        "id": "u3-10",
+        "label": "Class 12 Physics l Coulomb's Inverse Square Law  Magnetism l  of Magnetism Part 10",
+        "url": "https://www.youtube.com/watch?v=7bNEdL6Yc-o"
+      },
+      {
+        "id": "u3-11",
+        "label": "Class 12 Physics l Example 3.5 Magnetism and Magnetic Effects of Electric Current Part 11",
+        "url": "https://www.youtube.com/watch?v=AlKQ4VPDsZM"
+      },
+      {
+        "id": "u3-12",
+        "label": "TN Class 12 Physics | Example 3.6 | Part -14 | Magnetism  and Magnetic Effects of Electric Field",
+        "url": "https://www.youtube.com/watch?v=WbT9OTkvkT4"
+      },
+      {
+        "id": "u3-13",
+        "label": "TN Class 12 Physics | Example 3.7 | Part -16 | Magnetism  and Magnetic Effects of Electric Field",
+        "url": "https://www.youtube.com/watch?v=CLCHm-0ZVMU"
+      },
+      {
+        "id": "u3-14",
+        "label": "TN Class 12 Physics | Example 3.8 | Part -18 | Magnetism  and Magnetic Effects of Electric Field",
+        "url": "https://www.youtube.com/watch?v=mt7UMvtVOg8"
+      },
+      {
+        "id": "u3-15",
+        "label": "TN Class 12 Physics | Example 3.9 | Part -20 | Magnetism  and Magnetic Effects of Electric Field",
+        "url": "https://www.youtube.com/watch?v=1WY4elA59Wk"
+      },
+      {
+        "id": "u3-16",
+        "label": "TN Class 12 Physics | Part -19 | Tangent Law and Tangent Galvanometer - Magnetism NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=tyY_hMlobOU"
+      },
+      {
+        "id": "u3-17",
+        "label": "Oersted's experiment TN New Syllabus Class 12 Physics Magnetic Effects of Electric Field Part 22",
+        "url": "https://www.youtube.com/watch?v=-JkiQBJQiQE"
+      },
+      {
+        "id": "u3-18",
+        "label": "TN New Syllabus Class 12 Physics Magnetic Effects of Electric Field Example 3.14 part 24 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=JRKX5yP4UxE"
+      },
+      {
+        "id": "u3-19",
+        "label": "Biot Savart Law TN New Syllabus  Class 12 Physics AlexMaths Part 25 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=VnT4PQSnbEo"
+      },
+      {
+        "id": "u3-20",
+        "label": "Coulomb's law and Biot Savart law Similarities and Differences Part 26 Class 12 Physics",
+        "url": "https://www.youtube.com/watch?v=-KmxT5QjpCo"
+      },
+      {
+        "id": "u3-21",
+        "label": "TN New Syllabus Class 12 Physics Magnetic Effects of Electric Field Example 3.15 Part 28 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=ADMcuSb-0jY"
+      },
+      {
+        "id": "u3-22",
+        "label": "TN New Syllabus Class 12 Physics Magnetic Effects of Electric Field example 3.16 Part 29 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=eIv1zBDN8gY"
+      },
+      {
+        "id": "u3-23",
+        "label": "TN New Syllabus Class 12 Physics Magnetic Effects of Electric Field Example 3.17 Part 31 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=Eq50Rtjl0fU"
+      },
+      {
+        "id": "u3-24",
+        "label": "TN New Syllabus Class 12 Physics Ampere's Circuital Law Part 34 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=3wOWVEw2BzY"
+      },
+      {
+        "id": "u3-25",
+        "label": "TN New Syllabus Class 12 Physics Example 3.19 Magnetic effects of Electric Current Part 38 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=pZ5iq8vtxNA"
+      },
+      {
+        "id": "u3-26",
+        "label": "TN New Syllabus Class 12 Physics Toroid Magnetic effects of Electric Current Part 39 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=Qx_XbQwiOdA"
+      },
+      {
+        "id": "u3-27",
+        "label": "TN  Syllabus Class 12 Physics Lorentz Force  Magnetic effects of Electric Current Part 40 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=WpJSFmb4L8w"
+      },
+      {
+        "id": "u3-28",
+        "label": "TN New Syllabus Class 12 Physics Example 3.20 Magnetic effects of Electric Current Part 42 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=eQGKjZMw3bQ"
+      },
+      {
+        "id": "u3-29",
+        "label": "TN New Syllabus Class 12 Physics Example 3.21 Magnetic effects of Electric Current Part 43 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=CfrJhhhyoGg"
+      },
+      {
+        "id": "u3-30",
+        "label": "TN New Syllabus Class 12 Physics Example 3.22 Magnetic effects of Electric Current Part 45 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=VolsTu17RUA"
+      },
+      {
+        "id": "u3-31",
+        "label": "TN New Syllabus Class 12 Physics Example 3.23 Magnetic effects of Electric Current Part 46 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=_to5Ljioyaw"
+      },
+      {
+        "id": "u3-32",
+        "label": "TN New Syllabus Class 12 Physics Example 3.24 Magnetic effects of Electric Current Part 47 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=bU_OWb1qxcA"
+      },
+      {
+        "id": "u3-33",
+        "label": "TN New Syllabus Class 12 Physics Example 3.25 Magnetic effects of Electric Current Part 49 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=v2AVhMtkdOw"
+      },
+      {
+        "id": "u3-34",
+        "label": "TN New Syllabus Class 12 Physics Cyclotron Magnetic effects of Electric Current Part 50 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=gtPylm8RN04"
+      },
+      {
+        "id": "u3-35",
+        "label": "TN New Syllabus Class 12 Physics Example 3.10 | Magnetic effects of Electric Current part 51",
+        "url": "https://www.youtube.com/watch?v=kMgWQg_lnNg"
+      },
+      {
+        "id": "u3-36",
+        "label": "TN New Syllabus Class 12 Physics Example 3.11 | Magnetic effects of Electric Current part 52",
+        "url": "https://www.youtube.com/watch?v=rMQs3hU_A4M"
+      },
+      {
+        "id": "u3-37",
+        "label": "TN New Syllabus Class 12 Physics Example 3.10 | Magnetic effects of Electric Current part 53",
+        "url": "https://www.youtube.com/watch?v=uQlDFkuGhZ0"
+      },
+      {
+        "id": "u3-38",
+        "label": "Class 12 Physics  Diamagnetic materials |Magnetism and magnetic effects of electric current Part 54",
+        "url": "https://www.youtube.com/watch?v=VSOYnwg9PJ0"
+      },
+      {
+        "id": "u3-39",
+        "label": "Class 12 Physics  Paramagnetic materials Magnetism and magnetic effects of electric current Part 55",
+        "url": "https://www.youtube.com/watch?v=0pBBKd_kv2g"
+      },
+      {
+        "id": "u3-40",
+        "label": "Class 12 Physics  Ferromagnetic materials Magnetism and magnetic effects of electric current Part 56",
+        "url": "https://www.youtube.com/watch?v=LFrQQtICqEA"
+      },
+      {
+        "id": "u3-41",
+        "label": "Class 12 Physics  Hysteresis Magnetism and magnetic effects of electric current Part 57",
+        "url": "https://www.youtube.com/watch?v=4gI1Wf6otKY"
+      },
+      {
+        "id": "u3-42",
+        "label": "Class 12 Physics  Example 3.13 Magnetism and magnetic effects of electric current Part 58",
+        "url": "https://www.youtube.com/watch?v=dnZmnSLVCPU"
+      },
+      {
+        "id": "u3-43",
+        "label": "Class 12 Physics  Example 3.26 Magnetism and magnetic effects of electric current Part 60",
+        "url": "https://www.youtube.com/watch?v=sIYWF4iBU_M"
+      },
+      {
+        "id": "u3-44",
+        "label": "Class 12 Physics  Fleming\u2019s Left Hand Rule Magnetism & magnetic effects of electric current Part 61",
+        "url": "https://www.youtube.com/watch?v=s2Dt34047RA"
+      },
+      {
+        "id": "u3-45",
+        "label": "Class 12 Physics Example 3.28 Unit 3 Magnetism and magnetic effects of electric current Part 66",
+        "url": "https://www.youtube.com/watch?v=ffb0iHDM3cs"
+      },
+      {
+        "id": "u3-46",
+        "label": "Class 12 Physics Moving coil Galvanometer Magnetism & Magnetic eff of EC Part 67",
+        "url": "https://www.youtube.com/watch?v=0M9anH_hXIk"
+      },
+      {
+        "id": "u3-47",
+        "label": "Class 12 Physics Example 3.29 Magnetism & Magnetic effect of Electric Current Part 68",
+        "url": "https://www.youtube.com/watch?v=_FMxWey_LE4"
+      },
+      {
+        "id": "u3-48",
+        "label": "Class 12 Physics Example 3.30 Magnetism & Magnetic effect of Electric Current Part 69",
+        "url": "https://www.youtube.com/watch?v=Avl5OcfQQ5s"
+      },
+      {
+        "id": "u3-49",
+        "label": "Class 12 Physics Galvanometer to an Ammeter Magnetism & Magnetic effect of Electric Current Part 70",
+        "url": "https://www.youtube.com/watch?v=0Qy3cL5cfvE"
+      },
+      {
+        "id": "u3-50",
+        "label": "Class 12 Physics Galvanometer to an Voltmeter Magnetism & Magnetic effect of ElectricCurrent Part 71",
+        "url": "https://www.youtube.com/watch?v=YVg9fCgsjak"
+      },
+      {
+        "id": "u3-51",
+        "label": "12th Physics Motional emf from Lorentz force Electromagnetic Induction & Alternating Current Part 14",
+        "url": "https://www.youtube.com/watch?v=wK1F9Wcv_3g"
+      },
+      {
+        "id": "u3-52",
+        "label": "Class 12 Physics -Displacement current and Maxwell\u2019s correction to Ampere's circuital law-Part 2",
+        "url": "https://www.youtube.com/watch?v=HcQY1kjO39I"
+      }
+    ]
+  },
+  {
+    "chapter": 4,
+    "name": "Unit 4 - Electromagnetic Induction and AC",
+    "exercises": [
+      {
+        "id": "u4-1",
+        "label": "12th Physics in Tamil l Electrostatic Induction  Part - 49",
+        "url": "https://www.youtube.com/watch?v=_4GPVXaRzfQ"
+      },
+      {
+        "id": "u4-2",
+        "label": "12th Physics Introduction Electromagnetic Induction And Alternating Current Unit 4  Part 1 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=I_tOtzETLNo"
+      },
+      {
+        "id": "u4-3",
+        "label": "12th Physics Magnetic Flux Electromagnetic Induction & Alternating Current Unit 4  Part 2 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=6W4Ho7_hqRQ"
+      },
+      {
+        "id": "u4-4",
+        "label": "12th Physics Example 4.1 Electromagnetic Induction And Alternating Current Unit 4  Part 3 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=bfA6TwwaDRY"
+      },
+      {
+        "id": "u4-5",
+        "label": "12th Physics Example 4.2 Electromagnetic Induction And Alternating Current Unit 4  Part 4 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=USJuj4vWttk"
+      },
+      {
+        "id": "u4-6",
+        "label": "12th Physics Faraday\u2019s Experiments Electromagnetic Induction & Alternating Current Unit 4  Part 5",
+        "url": "https://www.youtube.com/watch?v=g1VtpquIylU"
+      },
+      {
+        "id": "u4-7",
+        "label": "12th Physics Faraday\u2019sLaw Electromagnetic Induction & Alternating Current Unit 4  Part 6",
+        "url": "https://www.youtube.com/watch?v=0Zoh_SNj9gw"
+      },
+      {
+        "id": "u4-8",
+        "label": "12th Physics Example 4.3 Electromagnetic Induction & Alternating Current Unit 4  Part 7",
+        "url": "https://www.youtube.com/watch?v=OxBYz8OsOtI"
+      },
+      {
+        "id": "u4-9",
+        "label": "12th Physics Example 4.4 Electromagnetic Induction & Alternating Current Unit 4  Part 8",
+        "url": "https://www.youtube.com/watch?v=Zcf4yWvd8EE"
+      },
+      {
+        "id": "u4-10",
+        "label": "12th Physics Example 4.5 Electromagnetic Induction & Alternating Current Unit 4  Part 9",
+        "url": "https://www.youtube.com/watch?v=5yK2mWCG_bI"
+      },
+      {
+        "id": "u4-11",
+        "label": "12th Physics Lenz\u2019s law Electromagnetic Induction & Alternating Current Unit 4  Part 10",
+        "url": "https://www.youtube.com/watch?v=PIVDfoO2ZDY"
+      },
+      {
+        "id": "u4-12",
+        "label": "12th Physics Fleming\u2019s right Hand Rule Unit 4 Electromagnetic Induction & AlternatingCurrent Part 11",
+        "url": "https://www.youtube.com/watch?v=0gDv_V17LrM"
+      },
+      {
+        "id": "u4-13",
+        "label": "12th Physics Example 4.6 Unit 4 Electromagnetic Induction & Alternating Current Part 12",
+        "url": "https://www.youtube.com/watch?v=Ap0bcAEThJg"
+      },
+      {
+        "id": "u4-14",
+        "label": "12th Physics Example 4.7 Unit 4 Electromagnetic Induction & AlternatingCurrent Part 13",
+        "url": "https://www.youtube.com/watch?v=PUJy0tCQ_zE"
+      },
+      {
+        "id": "u4-15",
+        "label": "12th Physics Motional emf from Faraday\u2019s law Electromagnetic Induction & Alternating Current Part 15",
+        "url": "https://www.youtube.com/watch?v=vA_Ua00_2OE"
+      },
+      {
+        "id": "u4-16",
+        "label": "12th Physics Example 4.8 Unit 4 Electromagnetic Induction & Alternating Current Part 16",
+        "url": "https://www.youtube.com/watch?v=5Cj7W5rpHQI"
+      },
+      {
+        "id": "u4-17",
+        "label": "12th Physics Example 4.9 Unit 4  Electromagnetic Induction & Alternating Current Part 17",
+        "url": "https://www.youtube.com/watch?v=M682KEhGo-s"
+      },
+      {
+        "id": "u4-18",
+        "label": "12th Physics Eddy current Demonstration Unit 4Electromagnetic Induction & AlternatingCurrent Part 18",
+        "url": "https://www.youtube.com/watch?v=O80ZmDx4uEs"
+      },
+      {
+        "id": "u4-19",
+        "label": "12th Physics Drawbacks of Eddy current  Unit 4 ElectromagneticInduction & AlternatingCurrent Part 19",
+        "url": "https://www.youtube.com/watch?v=E31uzceg3Ps"
+      },
+      {
+        "id": "u4-20",
+        "label": "12th Physics Applications of Eddy current  Unit 4 Electromagnetic Induction & AC Part 20",
+        "url": "https://www.youtube.com/watch?v=JEDBgyrRQVA"
+      },
+      {
+        "id": "u4-21",
+        "label": "12th Physics Self Induction  Unit 4 Electromagnetic Induction & AC Part 21",
+        "url": "https://www.youtube.com/watch?v=mER6ElSec0A"
+      },
+      {
+        "id": "u4-22",
+        "label": "12th Physics Self-inductance of along solenoid Unit 4 Electromagnetic Induction & AC Part 22",
+        "url": "https://www.youtube.com/watch?v=SW9Hb-JTF8c"
+      },
+      {
+        "id": "u4-23",
+        "label": "12th Physics Example 4.10 Unit 4 Electromagnetic Induction & AC Part 23 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=-rTdyc4bvOU"
+      },
+      {
+        "id": "u4-24",
+        "label": "12th Physics Example 4.11 Unit 4 Electromagnetic Induction & AC Part 24 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=wBU0est80SE"
+      },
+      {
+        "id": "u4-25",
+        "label": "12th Physics Mutual induction Unit 4 Electromagnetic Induction & AC Part 25 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=PAxQ7aWgHq4"
+      },
+      {
+        "id": "u4-26",
+        "label": "12th Physics Mutual inductancebetween two long co-axialsolenoids Electromagnetic Induction & AC",
+        "url": "https://www.youtube.com/watch?v=9Se008Zse7o"
+      },
+      {
+        "id": "u4-27",
+        "label": "12th Physics Example 4.12 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=qpqVuKR0LgQ"
+      },
+      {
+        "id": "u4-28",
+        "label": "12th Physics Example 4.13 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=JtAjUNP4QbU"
+      },
+      {
+        "id": "u4-29",
+        "label": "12th Physics Method  of  Induced EMF  Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=cEP-iujn6OE"
+      },
+      {
+        "id": "u4-30",
+        "label": "12th Physics Production of induced emf by changing the magnetic field Electromagnetic Induction & AC",
+        "url": "https://www.youtube.com/watch?v=gs-RJQCTWm4"
+      },
+      {
+        "id": "u4-31",
+        "label": "12th Physics Production of induced emfby changing the area of the coil Electromagnetic Induction &AC",
+        "url": "https://www.youtube.com/watch?v=Wr6eOOfjIlg"
+      },
+      {
+        "id": "u4-32",
+        "label": "12th Physics Example 4.14 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=tRmdRKIyznI"
+      },
+      {
+        "id": "u4-33",
+        "label": "12th Physics Induced emf by  changing  orientation of the coil Electromagnetic Induction & AC Unit 4",
+        "url": "https://www.youtube.com/watch?v=kMeiEL_zLCs"
+      },
+      {
+        "id": "u4-34",
+        "label": "12th Physics Example 4.15 Electromagnetic Induction & Alternatinf Current  Unit 4",
+        "url": "https://www.youtube.com/watch?v=pnfhjCbMR6s"
+      },
+      {
+        "id": "u4-35",
+        "label": "12th Physics AC Generator  Electromagnetic Induction & Alternating Current  Unit 4",
+        "url": "https://www.youtube.com/watch?v=uIvU9zOK_KU"
+      },
+      {
+        "id": "u4-36",
+        "label": "12th Physics Single phase AC Generator  Electromagnetic Induction & Alternatinf Current  Unit 4",
+        "url": "https://www.youtube.com/watch?v=GWG4qGs3xaI"
+      },
+      {
+        "id": "u4-37",
+        "label": "12th Physics Three - phase AC Generator  Electromagnetic Induction & Alternatinf Current  Unit 4",
+        "url": "https://www.youtube.com/watch?v=5caIn_VdTuA"
+      },
+      {
+        "id": "u4-38",
+        "label": "12th PhysicsTransformer Construction & Working  Electromagnetic Induction & Alternatinf Current",
+        "url": "https://www.youtube.com/watch?v=h0031U5wM_8"
+      },
+      {
+        "id": "u4-39",
+        "label": "TN 12th Physics Example 4.16 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=HKCQDwsvEJw"
+      },
+      {
+        "id": "u4-40",
+        "label": "TN 12th Physics Example 4.17 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=sDP3ouWyZlQ"
+      },
+      {
+        "id": "u4-41",
+        "label": "TN 12th Physics Alternating Current Introduction Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=dXaI8ZCRQQs"
+      },
+      {
+        "id": "u4-42",
+        "label": "TN 12th Physics Mean or Average value of AC Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=rFwYEB10MdQ"
+      },
+      {
+        "id": "u4-43",
+        "label": "TN 12th Physics RMS value of AC Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=aoJ3x0J5hvw"
+      },
+      {
+        "id": "u4-44",
+        "label": "TN 12th Physics Example 4.18 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=0CXalu4b7Go"
+      },
+      {
+        "id": "u4-45",
+        "label": "TN 12th Physics Example 4.19 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=9mEKyXBheU4"
+      },
+      {
+        "id": "u4-46",
+        "label": "TN 12th Physics Phasor diagram Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=tad3efQYHlU"
+      },
+      {
+        "id": "u4-47",
+        "label": "TN 12th Physics AC circuit containing pure resistor Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=EVwOgW_5Pis"
+      },
+      {
+        "id": "u4-48",
+        "label": "TN 12th Physics AC circuit with inductor Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=ZNmYFshZqSo"
+      },
+      {
+        "id": "u4-49",
+        "label": "TN 12th Physics AC circuit with capacitor Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=R3lXzQR7Azc"
+      },
+      {
+        "id": "u4-50",
+        "label": "TN 12th Physics Example 4.20 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=hjvW2riwnxw"
+      },
+      {
+        "id": "u4-51",
+        "label": "TN 12th Physics Example 4.21 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=fQGW3HHM4qU"
+      },
+      {
+        "id": "u4-52",
+        "label": "TN 12th Physics AC circuit containing R, L and C Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=hS34dWr0XDM"
+      },
+      {
+        "id": "u4-53",
+        "label": "TN 12th Physics Resonance in series RLC Circuit Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=-6nteIrbyVk"
+      },
+      {
+        "id": "u4-54",
+        "label": "TN 12th Physics Quality factor or Q\u2013factor Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=ACQ7dUT1iUo"
+      },
+      {
+        "id": "u4-55",
+        "label": "TN 12th Physics Example 4.22 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=kyJgPpB_8Ck"
+      },
+      {
+        "id": "u4-56",
+        "label": "TN 12th Physics Example 4.23 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=s_oteoIKdFU"
+      },
+      {
+        "id": "u4-57",
+        "label": "TN 12th Physics Example 4.24 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=gYqdROh33os"
+      },
+      {
+        "id": "u4-58",
+        "label": "TN 12th Physics Example 4.25 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=ttDgx658bWg"
+      },
+      {
+        "id": "u4-59",
+        "label": "TN 12th Physics Introduction of power in AC circuits Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=SC7bDX0W7Gg"
+      },
+      {
+        "id": "u4-60",
+        "label": "TN 12th Physics Wattless current Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=S_MgDKsTs88"
+      },
+      {
+        "id": "u4-61",
+        "label": "TN 12th Physics Power Factor Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=F5N0PymSJk8"
+      },
+      {
+        "id": "u4-62",
+        "label": "TN 12th Physics Advantages and disadvantages of AC over DC Electromagnetic Induction & AC",
+        "url": "https://www.youtube.com/watch?v=qIaJ2HOwLHI"
+      },
+      {
+        "id": "u4-63",
+        "label": "TN 12th Physics Example 4.26 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=NZ3y9-yFdh8"
+      },
+      {
+        "id": "u4-64",
+        "label": "TN 12th Physics Example 4.27 Electromagnetic Induction & Alternating Current",
+        "url": "https://www.youtube.com/watch?v=XfXNJGznGHw"
+      },
+      {
+        "id": "u4-65",
+        "label": "TN 12th Physics Energy conversion during LC oscillations Electromagnetic Induction & AC",
+        "url": "https://www.youtube.com/watch?v=6NK0RoOQ5h0"
+      },
+      {
+        "id": "u4-66",
+        "label": "TN 12th Physics Conservation of energyin LC oscillations Electromagnetic Induction & AC",
+        "url": "https://www.youtube.com/watch?v=PLITo1hF6IU"
+      },
+      {
+        "id": "u4-67",
+        "label": "TN 12th Physics Analogies between LC  &  simpleharmonic oscillations Electromagnetic Induction & AC",
+        "url": "https://www.youtube.com/watch?v=_Ca9K1ksqEA"
+      },
+      {
+        "id": "u4-68",
+        "label": "12th Physics Advantages of AC in long distance power transmission  Electromagnetic Induction & AC",
+        "url": "https://www.youtube.com/watch?v=AwLWxaJPI70"
+      }
+    ]
+  },
+  {
+    "chapter": 5,
+    "name": "Unit 5 - Electromagnetic Waves",
+    "exercises": [
+      {
+        "id": "u5-1",
+        "label": "Class 12 Physics - Electromagnetic waves-Introduction-Part 1 TN New Syllabus NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=qiv5rJsZ4qw"
+      },
+      {
+        "id": "u5-2",
+        "label": "Class 12 Physics -ELECTROMAGNETIC WAVES  Chapter 5 - Example 5.1 Part 3",
+        "url": "https://www.youtube.com/watch?v=1xFR_wCgvLw"
+      },
+      {
+        "id": "u5-3",
+        "label": "Class 12 Physics  Chapter 5 Production of electromagnetic waves - Hertz experiment-Part 5",
+        "url": "https://www.youtube.com/watch?v=Yslv35Rmr3c"
+      },
+      {
+        "id": "u5-4",
+        "label": "Class 12 Physics  Chapter 5 Properties of electromagnetic waves - Hertz experiment-Part 6",
+        "url": "https://www.youtube.com/watch?v=xlwDEYXT11w"
+      },
+      {
+        "id": "u5-5",
+        "label": "Class 12 Physics -ELECTROMAGNETIC WAVES  Chapter 5 - Example 5.2 Part -7",
+        "url": "https://www.youtube.com/watch?v=CsvqMokpVPc"
+      },
+      {
+        "id": "u5-6",
+        "label": "Class 12 Physics -ELECTROMAGNETIC WAVES  Chapter 5 - Example 5.3 Part -8",
+        "url": "https://www.youtube.com/watch?v=P0VVNwDk7wo"
+      },
+      {
+        "id": "u5-7",
+        "label": "Class 12 Physics  Chapter 5 Sources of electromagnetic waves-Part 9",
+        "url": "https://www.youtube.com/watch?v=9qMhloOmqss"
+      },
+      {
+        "id": "u5-8",
+        "label": "Class 12 Physics -ELECTROMAGNETIC WAVES Chapter 5 - Example 5.4 Part - 11",
+        "url": "https://www.youtube.com/watch?v=NMpMok5Euuo"
+      },
+      {
+        "id": "u5-9",
+        "label": "Class 12 Physics ELECTROMAGNETIC WAVES  Example 5.1",
+        "url": "https://www.youtube.com/watch?v=MM-lohoxSys"
+      }
+    ]
+  },
+  {
+    "chapter": 6,
+    "name": "Unit 6 - Ray Optics",
+    "exercises": [
+      {
+        "id": "u6-1",
+        "label": "Class 12 Physics Ray Optics  Part 1  Reflection of light TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=GnFK8oeOp_0"
+      },
+      {
+        "id": "u6-2",
+        "label": "Class 12 Physics Ray Optics  Part 2 Angle of deviation due to reflection TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=LbIZiuo23iQ"
+      },
+      {
+        "id": "u6-3",
+        "label": "Class 12 Physics Ray Optics  Part 3  Example 6.1 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=WyAldkzzWz8"
+      },
+      {
+        "id": "u6-4",
+        "label": "12th Std Physics Ray Optics  Part 4 Image formation in plane mirror TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=jj1hHHj9FAM"
+      },
+      {
+        "id": "u6-5",
+        "label": "12th Std Physics Ray Optics  Part 5 Characteristics of the image formed by plane mirror TN Syllabus",
+        "url": "https://www.youtube.com/watch?v=tO04LraH-hc"
+      },
+      {
+        "id": "u6-6",
+        "label": "12th Std Physics Ray Optics  Part 6 Real and virtual images by a plane mirror TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=jhoxcV2Xefc"
+      },
+      {
+        "id": "u6-7",
+        "label": "Class 12 Physics Ray Optics  Part 7  Example 6.2 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=Q0HH6cYcwXo"
+      },
+      {
+        "id": "u6-8",
+        "label": "12th Std Physics Ray Optics  Part 8 SPHERICAL MIRRORS TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=R3gVKyIsEuo"
+      },
+      {
+        "id": "u6-9",
+        "label": "12th Std Physics Ray Optics  Part 9  Paraxial Rays and Marginal Rays TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=m5HYfV_gSIg"
+      },
+      {
+        "id": "u6-10",
+        "label": "12th Std Physics Ray Optics  Part 10  Relation between f and R TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=6V2qTwiqReA"
+      },
+      {
+        "id": "u6-11",
+        "label": "12th Std Physics Ray Optics  Part 11  Image formation in spherical mirrors TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=xtvEAeS3hPE"
+      },
+      {
+        "id": "u6-12",
+        "label": "12th Std Physics Ray Optics  Part 12  Cartesian sign convention TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=m7qa04zvu1M"
+      },
+      {
+        "id": "u6-13",
+        "label": "12th Std Physics Ray Optics  Part 13 The mirror equation TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=szIiYDfqt9c"
+      },
+      {
+        "id": "u6-14",
+        "label": "12th Std Physics Ray Optics  Part 14 Lateral magnification in spherical mirrors TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=jjRBIFAQ6nI"
+      },
+      {
+        "id": "u6-15",
+        "label": "12th Std Physics Ray Optics  Part 15 Example 6.3 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=uZ4Ka9TpDKY"
+      },
+      {
+        "id": "u6-16",
+        "label": "12th Std Physics Ray Optics  Fizeau\u2019s method to determine speed of light  Part 16 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=VvIbl44CZFY"
+      },
+      {
+        "id": "u6-17",
+        "label": "12th Std Physics Ray Optics  Speed of light through different media  Part 17 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=TWEmnp2izZ0"
+      },
+      {
+        "id": "u6-18",
+        "label": "12th Std Physics Ray Optics  Refractive index Part 18 TN New Syllabus Alexmaths",
+        "url": "https://www.youtube.com/watch?v=CVVQqwzyL3Y"
+      },
+      {
+        "id": "u6-19",
+        "label": "12th Std Physics Ray Optics  Example 6.5 Part 19 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=bJFBDCL09iQ"
+      },
+      {
+        "id": "u6-20",
+        "label": "12th Std Physics Ray Optics  Optical path  Part 20 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=P-wXh8mX8eQ"
+      },
+      {
+        "id": "u6-21",
+        "label": "12th Std Physics Ray Optics  Example 6.6 Part 21 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=_wiH7rPHxFg"
+      },
+      {
+        "id": "u6-22",
+        "label": "12th Std Physics Ray Optics  Refraction Part 22 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=K-PIiHuOSgo"
+      },
+      {
+        "id": "u6-23",
+        "label": "12th Std Physics Ray Optics Angle of deviation due to refraction Part 23 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=4XrOMfX5OKM"
+      },
+      {
+        "id": "u6-24",
+        "label": "12th Std Physics Ray Optics Characteristics of refraction Part 24 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=rtQOFnF3Bic"
+      },
+      {
+        "id": "u6-25",
+        "label": "12th Std Physics Ray Optics Principle of reversibility Part 25 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=-IWTj5QACJA"
+      },
+      {
+        "id": "u6-26",
+        "label": "12th Std Physics Ray Optics Relative refractive index Part 26 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=n1hSmpkMnmE"
+      },
+      {
+        "id": "u6-27",
+        "label": "12th Std Physics Ray Optics EXAMPLE 6.7 Part 27 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=OkU1_ouumKw"
+      },
+      {
+        "id": "u6-28",
+        "label": "12th Std Physics Ray Optics Apparent depth Part 28 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=V8Eo7PB6xFg"
+      },
+      {
+        "id": "u6-29",
+        "label": "12th Std Physics Ray Optics Example 6.8 Part 29 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=26YyXF6-JQ4"
+      },
+      {
+        "id": "u6-30",
+        "label": "12th Std Physics Ray Optics Critical angle and total internal reflection Part 30 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=mPnShl3K2XQ"
+      },
+      {
+        "id": "u6-31",
+        "label": "12th Std Physics Ray Optics Effects due to total internal reflection  Glittering of diamond Part 31",
+        "url": "https://www.youtube.com/watch?v=A6vpbaWSH9E"
+      },
+      {
+        "id": "u6-32",
+        "label": "12th Std Physics Ray Optics Mirage and Lomming Part 32 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=x0T8v-O-CEE"
+      },
+      {
+        "id": "u6-33",
+        "label": "12th Std Physics Ray Optics Prisms making using of total internal reflection Part 33 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=tXHPJQyDk5A"
+      },
+      {
+        "id": "u6-34",
+        "label": "12th Std Physics Ray Optics  Snell's Window Part 34 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=72cJax43vkc"
+      },
+      {
+        "id": "u6-35",
+        "label": "Lens maker\u2019s formula and lens equation -Class 12 Physics Ray Optics",
+        "url": "https://www.youtube.com/watch?v=YTKEcCgwX5c"
+      },
+      {
+        "id": "u6-36",
+        "label": "12th Physics Angle of deviation produced by prism  - Ray Optics Unit 6  Alexmaths",
+        "url": "https://www.youtube.com/watch?v=0-CjR8xl0ko"
+      },
+      {
+        "id": "u6-37",
+        "label": "Angle of minimum deviation - Class 12 Physics -Ray Optics TamilNadu Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=SwkH3vTfhvI"
+      },
+      {
+        "id": "u6-38",
+        "label": "Refractive index of the material of the prism - Ray Optics Unit 6 Class 12 Physics",
+        "url": "https://www.youtube.com/watch?v=e-9_e5WvLpM"
+      }
+    ]
+  },
+  {
+    "chapter": 7,
+    "name": "Unit 7 - Wave Optics",
+    "exercises": [
+      {
+        "id": "u7-1",
+        "label": "Brewster's Law Class 12 Physics Wave Optics Unit 7 Alex Maths TN Physics Public and JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=gTQf17jY38I"
+      },
+      {
+        "id": "u7-2",
+        "label": "Theory of Light -  Wave Optics Unit 7 Class 12 Physics AlexMaths JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=MA_B-xBz_OI"
+      },
+      {
+        "id": "u7-3",
+        "label": "Wavefront -  Wave Optics Unit 7 Class 12 Physics AlexMaths JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=IhYRwPGg6gk"
+      },
+      {
+        "id": "u7-4",
+        "label": "Brewster's Law Class 12 Physics Wave Optics Unit 7 Alex Maths TN Physics Public and JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=gTQf17jY38I"
+      },
+      {
+        "id": "u7-5",
+        "label": "Young\u2019s double slit experiment -  Wave Optics Unit 7 Class 12 Physics AlexMaths JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=_M9aLWCcOog"
+      },
+      {
+        "id": "u7-6",
+        "label": "Huygens\u2019 Principle -  Wave Optics Unit 7 Class 12 Physics AlexMaths JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=LyeLQTHTfbA"
+      },
+      {
+        "id": "u7-7",
+        "label": "Proof for laws of reflection using Huygens\u2019 Principle   Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=bALyKt_P-xA"
+      },
+      {
+        "id": "u7-8",
+        "label": "Proof for laws of refraction using Huygens\u2019 Principle   Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=Q3Sr7nlRSNs"
+      },
+      {
+        "id": "u7-9",
+        "label": "Interference  Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=GJmT26n2ckk"
+      },
+      {
+        "id": "u7-10",
+        "label": "Example 7.2  Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=YkH2bJpnZR8"
+      },
+      {
+        "id": "u7-11",
+        "label": "Example 7.3  Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=kquqWq6Zdy4"
+      },
+      {
+        "id": "u7-12",
+        "label": "Example 7.4  Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=VVFyecjJwDg"
+      },
+      {
+        "id": "u7-13",
+        "label": "Phase difference and path difference  Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=_hn6BPq5Lx4"
+      },
+      {
+        "id": "u7-14",
+        "label": "Example 7.5 Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=XnrFyhFo4kY"
+      },
+      {
+        "id": "u7-15",
+        "label": "Coherent sources Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=kzkrfVB6Sww"
+      },
+      {
+        "id": "u7-16",
+        "label": "Double slit as coherent sources Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=45P6QwBXCqA"
+      },
+      {
+        "id": "u7-17",
+        "label": "Example 7.6 Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=5eQ7t8L7CnE"
+      },
+      {
+        "id": "u7-18",
+        "label": "Interference in white light (polychromatic light) Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=SO00RwPOUJM"
+      },
+      {
+        "id": "u7-19",
+        "label": "Example 7.7 Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=V_P-bMIws2w"
+      },
+      {
+        "id": "u7-20",
+        "label": "Interference in thin films Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=NiUI9SBbWC8"
+      },
+      {
+        "id": "u7-21",
+        "label": "Example 7.8 Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=-T9izAoUvmc"
+      },
+      {
+        "id": "u7-22",
+        "label": "Fresnel and Fraunhofer diffractions Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=ltsVJUXBALo"
+      },
+      {
+        "id": "u7-23",
+        "label": "Diffraction in single slit  Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=jeap-7DYPkY"
+      },
+      {
+        "id": "u7-24",
+        "label": "Example 7.9 Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=C_sqhtJnKPU"
+      },
+      {
+        "id": "u7-25",
+        "label": "Example 7.10 Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=TS8KHOjeEsA"
+      },
+      {
+        "id": "u7-26",
+        "label": "Discussion on first minimum Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=mOvTdagILtM"
+      },
+      {
+        "id": "u7-27",
+        "label": "Fresnel\u2019s distance Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=7596X72x-7A"
+      },
+      {
+        "id": "u7-28",
+        "label": "Example 7.11 Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=OW0cODOcunA"
+      },
+      {
+        "id": "u7-29",
+        "label": "Difference between interference and diffraction  Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=p_darZcx8QM"
+      },
+      {
+        "id": "u7-30",
+        "label": "Diffraction in grating Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=tGLYkBLMUv0"
+      },
+      {
+        "id": "u7-31",
+        "label": "Example 7.12 Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=rpdtZSTfGFA"
+      },
+      {
+        "id": "u7-32",
+        "label": "Example 7.13 Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=SGJKRQtWWHE"
+      },
+      {
+        "id": "u7-33",
+        "label": "Experiment to determine the wavelength of monochromatic light Wave Optics Unit 7 Class 12 Physics",
+        "url": "https://www.youtube.com/watch?v=sxV8tbzObTU"
+      },
+      {
+        "id": "u7-34",
+        "label": "Determination of wavelength of different colours Wave Optics Unit 7 Class 12 Physics JEE/NEET",
+        "url": "https://www.youtube.com/watch?v=_T7Pupa_75A"
+      }
+    ]
+  },
+  {
+    "chapter": 8,
+    "name": "Unit 8 - Dual Nature of Radiation and Matter",
+    "exercises": [
+      {
+        "id": "u8-1",
+        "label": "12th  Physics Introduction Dual Nature of Radiation & Matter Unit 8 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=oyn_praD8ag"
+      },
+      {
+        "id": "u8-2",
+        "label": "12th  Physics Electron Emission Dual Nature of Radiation & Matter Unit 8 TN New Syllabus AlexMaths",
+        "url": "https://www.youtube.com/watch?v=tOPhHu2ELQY"
+      },
+      {
+        "id": "u8-3",
+        "label": "12th  Physics Hertz, Hallwachs and Lenard\u2019s observation Dual Nature of Radiation & Matter Unit 8",
+        "url": "https://www.youtube.com/watch?v=fET3xBxyZlE"
+      },
+      {
+        "id": "u8-4",
+        "label": "12th Physics Effect of intensity of incident light on photo electric current Dual Nature Unit 8",
+        "url": "https://www.youtube.com/watch?v=fOkWH4cGAfY"
+      },
+      {
+        "id": "u8-5",
+        "label": "12th  Physics Effect of potential difference on photo electric current Dual Nature Unit 8",
+        "url": "https://www.youtube.com/watch?v=fEsXaw3Ypck"
+      },
+      {
+        "id": "u8-6",
+        "label": "12th Physics Effect of Frequency of Incident Light on Stopping Potential Dual Nature  Unit 8",
+        "url": "https://www.youtube.com/watch?v=CwkTUlPMW5I"
+      },
+      {
+        "id": "u8-7",
+        "label": "12th  Physics Laws of photoelectric effect Dual Nature of Radiation & Matter Unit 8 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=UwYtVpj8Xas"
+      },
+      {
+        "id": "u8-8",
+        "label": "12th  Physics Concept of quantization of energy Dual Nature of Radiation & Matter Unit 8 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=6Kdr9Sg7cD4"
+      },
+      {
+        "id": "u8-9",
+        "label": "12th Physics Particle nature of light Einstein\u2019s explanation Dual Nature of Radiation &Matter Unit 8",
+        "url": "https://www.youtube.com/watch?v=AkpFtPhARzM"
+      },
+      {
+        "id": "u8-10",
+        "label": "12th Physics  Einstein's Explanation of Photoelectric Equation DualNature of Radiation&Matter Unit 8",
+        "url": "https://www.youtube.com/watch?v=JTflsFd3Acc"
+      },
+      {
+        "id": "u8-11",
+        "label": "12th Physics Photo Electric Cell  Dual Nature of Radiation & Matter Unit 8",
+        "url": "https://www.youtube.com/watch?v=9phBjJhw4rA"
+      },
+      {
+        "id": "u8-12",
+        "label": "12th Physics  Example 8.2  Dual Nature of Radiation & Matter Unit 8",
+        "url": "https://www.youtube.com/watch?v=xeFh1ncdPv4"
+      },
+      {
+        "id": "u8-13",
+        "label": "12th Physics  Example 8.3 Dual Nature of Radiation & Matter  Unit 8 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=iLGNdz3jVws"
+      },
+      {
+        "id": "u8-14",
+        "label": "12th Physics  Example 8.4 Dual Nature of Radiation & Matter  Unit 8 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=P7XROzwH0r8"
+      },
+      {
+        "id": "u8-15",
+        "label": "12th Physics  Example 8.5 Dual Nature of Radiation & Matter  Unit 8 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=AwyGU1a5b3U"
+      },
+      {
+        "id": "u8-16",
+        "label": "12th Physics  De Broglie wavelength of Electrons Dual Nature Matter & Radiation Unit 8",
+        "url": "https://www.youtube.com/watch?v=GJF85nxv6zc"
+      },
+      {
+        "id": "u8-17",
+        "label": "12th Physics  Davisson Germer Experiment Dual Nature of Radiation & Matter  Unit 8",
+        "url": "https://www.youtube.com/watch?v=6k7ALXCQ-Oo"
+      },
+      {
+        "id": "u8-18",
+        "label": "Class 12 Physics   Electron Microscope  Dual Nature of Radiation & Matter  Unit 8",
+        "url": "https://www.youtube.com/watch?v=MbkPUgAG7Zo"
+      },
+      {
+        "id": "u8-19",
+        "label": "12th Physics  Example 8.6 Dual Nature of Radiation & Matter  Unit 8 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=Isguwaqu1lA"
+      },
+      {
+        "id": "u8-20",
+        "label": "12th Physics  Example 8.7 Dual Nature of Radiation & Matter  Unit 8 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=dVi6FyOxY8M"
+      },
+      {
+        "id": "u8-21",
+        "label": "12th Physics  Example 8.8 Dual Nature of Radiation & Matter  Unit 8 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=cv6rAJMHpsE"
+      },
+      {
+        "id": "u8-22",
+        "label": "Class 12 Physics   Discovery of X rays  Dual Nature of Radiation & Matter  Unit 8",
+        "url": "https://www.youtube.com/watch?v=3RkxLcTFMq4"
+      },
+      {
+        "id": "u8-23",
+        "label": "Class 12 Physics  Production of X rays Dual Nature of Radiation & Matter  Unit 8",
+        "url": "https://www.youtube.com/watch?v=WBx4NrxDouw"
+      },
+      {
+        "id": "u8-24",
+        "label": "Class 12 Physics  X ray Spectra Dual Nature of Radiation & Matter  Unit 8",
+        "url": "https://www.youtube.com/watch?v=6MinzDHkmHw"
+      },
+      {
+        "id": "u8-25",
+        "label": "Class 12 Physics  Applications of X rays Dual Nature of Radiation & Matter  Unit 7",
+        "url": "https://www.youtube.com/watch?v=axMNuFeWXkM"
+      },
+      {
+        "id": "u8-26",
+        "label": "12th Physics  Example 8.9 Dual Nature of Radiation & Matter  Unit 8 AlexMaths",
+        "url": "https://www.youtube.com/watch?v=S-nUL67xYxg"
+      }
+    ]
+  },
+  {
+    "chapter": 9,
+    "name": "Unit 9 - Atomic and Nuclear Physics",
+    "exercises": [
+      {
+        "id": "u9-1",
+        "label": "12th Physics TN New Syllabus Atomic and Nuclear Physics  Electric Discharge Through Gases Unit 9",
+        "url": "https://www.youtube.com/watch?v=EQiuknQYSEs"
+      },
+      {
+        "id": "u9-2",
+        "label": "12th Physics  Atomic and Nuclear Physics  Specific Charge e/m Thomson Experiment Unit 9",
+        "url": "https://www.youtube.com/watch?v=uUzUV1yA5uM"
+      },
+      {
+        "id": "u9-3",
+        "label": "Millikan\u2019s oil drop experiment - Unit 9 Atomic and Nuclear physics JEE/NEET Class 12 Physics",
+        "url": "https://www.youtube.com/watch?v=s4vc3MldVU0"
+      },
+      {
+        "id": "u9-4",
+        "label": "J. J. Thomson\u2019s Model (Water melon model) Unit 9 Atomic & Nuclear physics JEE/NEET Class 12 Physics",
+        "url": "https://www.youtube.com/watch?v=FKMonn9btNY"
+      },
+      {
+        "id": "u9-5",
+        "label": "Rutherford\u2019s model Unit 9 Atomic & Nuclear physics JEE/NEET Class 12 Physics",
+        "url": "https://www.youtube.com/watch?v=XKgzv2hPl_c"
+      },
+      {
+        "id": "u9-6",
+        "label": "Bohr atom model Unit 9 Atomic & Nuclear physics JEE/NEET Class 12 Physics",
+        "url": "https://www.youtube.com/watch?v=Q9hpGadJKDQ"
+      }
+    ]
+  },
+  {
+    "chapter": 10,
+    "name": "Unit 10 - Additional Topics",
+    "exercises": [
+      {
+        "id": "u10-1",
+        "label": "12th physics | Electrostatic Potential Part -25 | Tamil Nadu State board",
+        "url": "https://www.youtube.com/watch?v=jRPf7E-ve4Q"
+      },
+      {
+        "id": "u10-2",
+        "label": "12th physics | Electrostatic Potential Due to a point charge Part -26 | Tamil Nadu State board",
+        "url": "https://www.youtube.com/watch?v=HUR53iDq8h8"
+      },
+      {
+        "id": "u10-3",
+        "label": "Electrostatic Potential Energy of a Dipole in Uniform Electric Field part 35 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=sDRshTCiuT4"
+      },
+      {
+        "id": "u10-4",
+        "label": "12th Physics l TN New syllabus l Electric Field due to an Infinitely Long Charged Wire part - 43",
+        "url": "https://www.youtube.com/watch?v=IBTprSCsopg"
+      },
+      {
+        "id": "u10-5",
+        "label": "12th Physics l Electric Field due to Charged Infinite Plane Sheet part -44 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=cjRRxs47TYA"
+      },
+      {
+        "id": "u10-6",
+        "label": "12th TN Physics l Electric Field due to two Parallel Charged Infinite Sheets part -  45",
+        "url": "https://www.youtube.com/watch?v=GtfEVgur340"
+      },
+      {
+        "id": "u10-7",
+        "label": "12th Physics in Tamil l Electric Field due to Uniformly Charged Spherical Shell  part - 46",
+        "url": "https://www.youtube.com/watch?v=nwJSaVHGfAs"
+      },
+      {
+        "id": "u10-8",
+        "label": "12th Physics in Tamil l Conductors at Electrostatic Equilibrium part 47",
+        "url": "https://www.youtube.com/watch?v=FtFaML_S_4g"
+      },
+      {
+        "id": "u10-9",
+        "label": "12th Physics in Tamil l Electrostatic Shielding Faraday Cage part 48 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=N7jcG7OOAEg"
+      },
+      {
+        "id": "u10-10",
+        "label": "12th Physics in Tamil l Dielectrics - Insulators l Polarization Part - 51 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=IBlRc1VbMUw"
+      },
+      {
+        "id": "u10-11",
+        "label": "12th  Physics in Tamil | Induced Electric Field in Dielectric and Dielectric Strength - Part 52",
+        "url": "https://www.youtube.com/watch?v=OqrbQ389R0U"
+      },
+      {
+        "id": "u10-12",
+        "label": "12th Physics in Tamil | Capacitor and Capacitance l Parallel Plate Capacitor - Part 53",
+        "url": "https://www.youtube.com/watch?v=JjgEVwXT01c"
+      },
+      {
+        "id": "u10-13",
+        "label": "Class 12 Physics l Magnetic Field at a point along the Axial Line of the Magnetic Dipole Part 12",
+        "url": "https://www.youtube.com/watch?v=09G9kx1vpzA"
+      },
+      {
+        "id": "u10-14",
+        "label": "Class 12 Physics l Magnetic Field along the Equatorial Line due to Magnetic Dipole Part 13",
+        "url": "https://www.youtube.com/watch?v=mxos9rrZl1I"
+      },
+      {
+        "id": "u10-15",
+        "label": "TN Class 12 Physics |  Part -15 | Torque acting on a bar magnet in uniform magnetic field",
+        "url": "https://www.youtube.com/watch?v=4HyoQoH8pf4"
+      },
+      {
+        "id": "u10-16",
+        "label": "TN Class 12 Physics |  Part -17 | Potential Energy of a bar magnet in a uniform magnetic Field",
+        "url": "https://www.youtube.com/watch?v=zsq9jtWDlxQ"
+      },
+      {
+        "id": "u10-17",
+        "label": "TN Class 12 Physics | Magnetic Properties | Part -21 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=BsEhICihvps"
+      },
+      {
+        "id": "u10-18",
+        "label": "Magnetic Field Around straight Current Carrying Conductor and Circular loop Part 23",
+        "url": "https://www.youtube.com/watch?v=Va6PcrV9O20"
+      },
+      {
+        "id": "u10-19",
+        "label": "Magnetic Field due to Long Straight Conductor Carrying Current Part 27",
+        "url": "https://www.youtube.com/watch?v=Y9ehj99M3Kw"
+      },
+      {
+        "id": "u10-20",
+        "label": "Class 12 PhysicsMagnetic field produced along the axis of the current carrying circular coil Part 30",
+        "url": "https://www.youtube.com/watch?v=ZQBaqavQ-hQ"
+      },
+      {
+        "id": "u10-21",
+        "label": "TN New Syllabus Class 12 Physics Current Loop as Magnetic Dipole Part 32 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=8ZadwKeAmtg"
+      },
+      {
+        "id": "u10-22",
+        "label": "TN New Syllabus Class 12 Physics magnetic Dipole moment of revolving electron Part 33 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=vClz-dSs3HU"
+      },
+      {
+        "id": "u10-23",
+        "label": "TN New Syllabus Class 12 Physics   Example 3.18 Magnetic effect of Electric Current Part 35 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=8E04ytvO8iw"
+      },
+      {
+        "id": "u10-24",
+        "label": "TN New Syllabus Class 12 Physics Solenoid introduction Alexmaths Part 36 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=7mf6OkvqaMg"
+      },
+      {
+        "id": "u10-25",
+        "label": "TN New Syllabus Class 12 Physics Magnetic Field due to a long current carrying Solenoid Part 37",
+        "url": "https://www.youtube.com/watch?v=NP_dP9FHN5k"
+      },
+      {
+        "id": "u10-26",
+        "label": "TN New Syllabus Class 12 Physics Force on a Moving Charge in a Magnetic Field Part 41 NEET/JEE",
+        "url": "https://www.youtube.com/watch?v=n13Eez021hk"
+      },
+      {
+        "id": "u10-27",
+        "label": "TN New Syllabus Class 12 Physics Motion of a Charged Particle in a a Uniform Magnetic Field Part 44",
+        "url": "https://www.youtube.com/watch?v=bJTaQzynn1g"
+      },
+      {
+        "id": "u10-28",
+        "label": "Class 12 Physics Motion of a Charged Particle Under Crossed Electric and Magnetic Field Part 48",
+        "url": "https://www.youtube.com/watch?v=Rz3mE9g8ue0"
+      },
+      {
+        "id": "u10-29",
+        "label": "12th Physics  Maxwell\u2019s right hand cork screw rule Unit 3  Part 59",
+        "url": "https://www.youtube.com/watch?v=UIzc5edH9Dc"
+      },
+      {
+        "id": "u10-30",
+        "label": "Class 12 Physics  Force on a current carrying conductor placed ina magnetic field Part 62 Unit 3",
+        "url": "https://www.youtube.com/watch?v=c_AYLERDACk"
+      },
+      {
+        "id": "u10-31",
+        "label": "Class 12 Physics Unit 3 Force between two long parallel current carrying conductors Part 64",
+        "url": "https://www.youtube.com/watch?v=0BOo435LMMA"
+      },
+      {
+        "id": "u10-32",
+        "label": "Class 12 Physics Unit 3 Expression for torque on a current loop placed in a magnetic field Part 65",
+        "url": "https://www.youtube.com/watch?v=4lmP_fNGP5A"
+      },
+      {
+        "id": "u10-33",
+        "label": "Class 12 Physics Unit 3 Expression for torque on a current loop placed in a magnetic field Part 65",
+        "url": "https://www.youtube.com/watch?v=4lmP_fNGP5A"
+      },
+      {
+        "id": "u10-34",
+        "label": "Class 12 Physics  Chapter 5 Maxwell\u2019s equations in integral form-Part 4 TN New Syllabus",
+        "url": "https://www.youtube.com/watch?v=VJKTXr-ihmk"
+      },
+      {
+        "id": "u10-35",
+        "label": "Class 12 Physics  Chapter 5 Electromagnetic spectrum-Part 10",
+        "url": "https://www.youtube.com/watch?v=Ixg6Vpgs7DU"
+      },
+      {
+        "id": "u10-36",
+        "label": "Class 12 Physics  Chapter 5 TYPES OF SPECTRUM EMISSION AND ABSORPTION SPECTRUM FRAUNHOFER LINES",
+        "url": "https://www.youtube.com/watch?v=_syhZCyR62o"
+      },
+      {
+        "id": "u10-37",
+        "label": "Example 9.1 Unit 9 Atomic & Nuclear physics JEE/NEET Class 12 Physics",
+        "url": "https://www.youtube.com/watch?v=sT5X0zBikbY"
+      },
+      {
+        "id": "u10-38",
+        "label": "Example 9.2 Unit 9 Atomic & Nuclear physics JEE/NEET Class 12 Physics",
+        "url": "https://www.youtube.com/watch?v=TXNN97QGzYI"
+      },
+      {
+        "id": "u10-39",
+        "label": "Radius and velocity of  the electron in the orbit Unit 9 Atomic & Nuclear physics  Class 12 Physics",
+        "url": "https://www.youtube.com/watch?v=j0wLaWsHKyM"
+      },
+      {
+        "id": "u10-40",
+        "label": "The energy of an electron in the nth orbit Unit 9 Atomic & Nuclear physics  Class 12 Physics",
+        "url": "https://www.youtube.com/watch?v=KMTXt1fkst4"
+      },
+      {
+        "id": "u10-41",
+        "label": "Class 12 Physics Example 9.4 Unit 9 Atomic & Nuclear physics",
+        "url": "https://www.youtube.com/watch?v=cxIEjykqEVo"
+      }
+    ]
+  }
+]

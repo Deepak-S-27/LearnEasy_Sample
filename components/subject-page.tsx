@@ -14,6 +14,8 @@ import {
   Sparkles,
 } from "lucide-react"
 import mathPlaylistData from "@/lib/math-playlist-data.json"
+import physicsPlaylistData from "@/lib/physics-playlist-data.json"
+import chemistryPlaylistData from "@/lib/chemistry-playlist-data.json"
 
 type TopicKey = "mockTest" | "pdfNotes" | "youtubeVideos"
 
@@ -86,7 +88,27 @@ export function SubjectPage({ subject }: { subject: string }) {
   const Icon = config.icon
   const topics: TopicKey[] = ["mockTest", "pdfNotes", "youtubeVideos"]
   const isMathematics = subject === "mathematics"
+  const isPhysics = subject === "physics"
+  const isChemistry = subject === "chemistry"
+  const isPlaylistSubject = isMathematics || isPhysics || isChemistry
   const mathChapters = mathPlaylistData as MathChapter[]
+  const physicsChapters = physicsPlaylistData as MathChapter[]
+  const chemistryChapters = chemistryPlaylistData as MathChapter[]
+  const activePlaylistChapters = isMathematics
+    ? mathChapters
+    : isPhysics
+      ? physicsChapters
+      : chemistryChapters
+  const playlistHeading = isMathematics
+    ? t("mathematics")
+    : isPhysics
+      ? t("physics")
+      : t("chemistry")
+  const playlistSourceUrl = isPhysics
+    ? "https://www.youtube.com/watch?v=DUz5zsk4uz8&list=PL2qtWkm0Z4ccui6LY1cmczoyQYhKQFTMA"
+    : isChemistry
+      ? "https://www.youtube.com/watch?v=4-zRGn3lSA0&list=PL2qtWkm0Z4cf6NVtrhEtaYTkL8zSrTz8r"
+      : "https://www.youtube.com/playlist?list=PL2qtWkm0Z4ceoeB0lzMfdKSKI85-l_Vv_"
 
   const toggleChapter = (ch: number) => {
     setExpandedChapters((prev) => {
@@ -103,7 +125,7 @@ export function SubjectPage({ subject }: { subject: string }) {
     setCurrentPage("chat")
   }
 
-  if (isMathematics) {
+  if (isPlaylistSubject) {
     return (
       <div className="flex flex-col min-h-screen bg-background pb-20">
         <header className="flex items-center gap-3 px-5 pt-5 pb-3">
@@ -121,16 +143,16 @@ export function SubjectPage({ subject }: { subject: string }) {
               <Icon className="h-5 w-5 text-white" />
             </div>
             <h1 className="text-xl font-bold text-foreground">
-              {t("mathematics")}
+              {playlistHeading}
             </h1>
           </div>
         </header>
 
         <main className="flex-1 px-5 mt-2 pb-6">
           <p className="text-sm text-muted-foreground mb-4">
-            TN Class 12 Maths • Chapter-wise video lessons from{" "}
+            {`TN Class 12 ${playlistHeading} • Unit-wise video lessons from `}
             <a
-              href="https://www.youtube.com/playlist?list=PL2qtWkm0Z4ceoeB0lzMfdKSKI85-l_Vv_"
+              href={playlistSourceUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline"
@@ -139,7 +161,7 @@ export function SubjectPage({ subject }: { subject: string }) {
             </a>
           </p>
           <div className="flex flex-col gap-2">
-            {mathChapters.map((ch) => {
+            {activePlaylistChapters.map((ch) => {
               const isExpanded = expandedChapters.has(ch.chapter)
               return (
                 <div

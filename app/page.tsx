@@ -5,7 +5,6 @@ import { LandingPage } from "@/components/landing-page"
 import { LoginPage } from "@/components/login-page"
 import { SignupPage } from "@/components/signup-page"
 import { DashboardPage } from "@/components/dashboard-page"
-import { SubjectsListPage } from "@/components/subjects-list-page"
 import { SubjectPage } from "@/components/subject-page"
 import { ChatPage } from "@/components/chat-page"
 import { ProfilePage } from "@/components/profile-page"
@@ -38,8 +37,6 @@ function AppContent() {
         // After login, show the same experience as the public landing page,
         // but personalized in the header with the student's name.
         return <LandingPage />
-      case "subjects":
-        return <SubjectsListPage />
       case "chat":
         return <ChatPage />
       case "profile":

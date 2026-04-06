@@ -241,7 +241,16 @@ export function LandingPage() {
 
   const handleGetStarted = () => {
     if (isAuthenticated) {
-      setCurrentPage("subjects")
+      // Skip intermediate subjects screen and open study content directly.
+      setCurrentPage("subject-mathematics")
+    } else {
+      setCurrentPage("login")
+    }
+  }
+
+  const handleSubjectOpen = (subjectKey: string) => {
+    if (isAuthenticated) {
+      setCurrentPage(`subject-${subjectKey}`)
     } else {
       setCurrentPage("login")
     }
@@ -389,7 +398,7 @@ export function LandingPage() {
 
       {/* Tab Content */}
       {activeTab === "home" && <HomeSection t={t} onGetStarted={handleGetStarted} onAiHelp={handleAiHelp} />}
-      {activeTab === "course" && <CourseSection t={t} onGetStarted={handleGetStarted} />}
+      {activeTab === "course" && <CourseSection t={t} onOpenSubject={handleSubjectOpen} />}
       {activeTab === "assessment" && <AssessmentSection t={t} />}
       {activeTab === "scholarship" && <ScholarshipSection t={t} />}
       {activeTab === "mentor" && <MentorSection t={t} onConnect={handleMentorConnect} />}
@@ -700,7 +709,13 @@ function HomeSection({ t, onGetStarted, onAiHelp }: { t: (key: string) => string
 }
 
 /* ===== COURSE SECTION ===== */
-function CourseSection({ t, onGetStarted }: { t: (key: string) => string; onGetStarted: () => void }) {
+function CourseSection({
+  t,
+  onOpenSubject,
+}: {
+  t: (key: string) => string
+  onOpenSubject: (subjectKey: string) => void
+}) {
   const [selectedLevel, setSelectedLevel] = useState<"beginner" | "intermediate" | "advanced">(
     "beginner",
   )
@@ -753,7 +768,7 @@ function CourseSection({ t, onGetStarted }: { t: (key: string) => string; onGetS
             return (
               <button
                 key={course.key}
-                onClick={onGetStarted}
+                onClick={() => onOpenSubject(course.key)}
                 className="group bg-card rounded-2xl overflow-hidden border border-border hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 text-left"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">

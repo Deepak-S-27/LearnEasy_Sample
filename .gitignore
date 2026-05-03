@@ -6,5 +6,23 @@ __v0_jsx-dev-runtime.ts
 # Common ignores
 node_modules/
 .next/
-.env*.local
+.env*
 .DS_Store
+
+# Build files
+out/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+Thumbs.db
+
+# Backend (important for your case)
+.venv/
+vectorstore/
+*.pyc
+__pycache__/

@@ -1,6 +1,0 @@
-langchain
-langchain-groq
-faiss-cpu
-tiktoken
-pypdf
-python-dotenv

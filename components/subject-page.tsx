@@ -12,6 +12,10 @@ import {
   CheckCircle2,
   ExternalLink,
   Sparkles,
+  Loader2,
+  X,
+  ListChecks,
+  BookMarked,
 } from "lucide-react"
 import mathPlaylistData from "@/lib/math-playlist-data.json"
 import physicsPlaylistData from "@/lib/physics-playlist-data.json"
@@ -104,6 +108,117 @@ export function SubjectPage({ subject }: { subject: string }) {
     : isPhysics
       ? t("physics")
       : t("chemistry")
+  const subjectEnglish =
+    subject === "mathematics"
+      ? "Mathematics"
+      : subject === "physics"
+        ? "Physics"
+        : subject === "chemistry"
+          ? "Chemistry"
+          : playlistHeading
+
+  const [aiPanel, setAiPanel] = useState<
+    null | { title: string; body: string; loading?: boolean }
+  >(null)
+
+  const openLoading = (title: string) =>
+    setAiPanel({ title, body: "", loading: true })
+
+  const summarizeVideoApi = async (
+    label: string,
+    url: string,
+    unitName: string
+  ) => {
+    openLoading(`Notes · ${label}`)
+    try {
+      const res = await fetch("/api/ai/summarize-video", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title: label, url, unitName }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        setAiPanel({
+          title: "Error",
+          body: (data as { error?: string }).error || "Request failed",
+        })
+        return
+      }
+      setAiPanel({
+        title: `Notes · ${label}`,
+        body: (data as { summary?: string }).summary || "",
+      })
+    } catch {
+      setAiPanel({ title: "Error", body: "Network error" })
+    }
+  }
+
+  const summarizeWholeUnit = async (ch: MathChapter) => {
+    openLoading(`Unit guide · ${ch.name}`)
+    try {
+      const res = await fetch("/api/ai/summarize-unit", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: subjectEnglish,
+          unitName: ch.name,
+          videos: ch.exercises.map((ex) => ({ label: ex.label, url: ex.url })),
+        }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        setAiPanel({
+          title: "Error",
+          body: (data as { error?: string }).error || "Request failed",
+        })
+        return
+      }
+      setAiPanel({
+        title: `Unit guide · ${ch.name}`,
+        body: (data as { summary?: string }).summary || "",
+      })
+    } catch {
+      setAiPanel({ title: "Error", body: "Network error" })
+    }
+  }
+
+  const mcqsForUnit = async (ch: MathChapter) => {
+    openLoading(`MCQs · ${ch.name}`)
+    try {
+      const res = await fetch("/api/ai/mcqs-unit", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: subjectEnglish,
+          unitName: ch.name,
+          count: 8,
+          videoTitlesHint: ch.exercises.map((ex) => ex.label),
+        }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        setAiPanel({
+          title: "Error",
+          body: (data as { error?: string }).error || "Request failed",
+        })
+        return
+      }
+      const pretty = JSON.stringify(
+        (data as { questions?: unknown }).questions,
+        null,
+        2
+      )
+      setAiPanel({
+        title: `MCQs · ${ch.name}`,
+        body: pretty,
+      })
+    } catch {
+      setAiPanel({ title: "Error", body: "Network error" })
+    }
+  }
   const playlistSourceUrl = isPhysics
     ? "https://www.youtube.com/watch?v=DUz5zsk4uz8&list=PL2qtWkm0Z4ccui6LY1cmczoyQYhKQFTMA"
     : isChemistry
@@ -120,6 +235,10 @@ export function SubjectPage({ subject }: { subject: string }) {
   }
 
   const handleSummarizeWithAI = (label: string, url: string, chapterName: string) => {
+    void summarizeVideoApi(label, url, chapterName)
+  }
+
+  const askInChat = (label: string, url: string, chapterName: string) => {
     const prompt = `Please summarize and create useful revision notes for: ${label} from Chapter ${chapterName}. Video link: ${url}. Give me key concepts, formulas, and step-by-step tips to remember.`
     setInitialChatMessage(prompt)
     setCurrentPage("chat")
@@ -128,6 +247,43 @@ export function SubjectPage({ subject }: { subject: string }) {
   if (isPlaylistSubject) {
     return (
       <div className="flex flex-col min-h-screen bg-background pb-20">
+        {aiPanel && (
+          <div
+            className="fixed inset-0 z-[80] flex items-end sm:items-center justify-center bg-black/45 p-3 sm:p-6"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="ai-panel-title"
+          >
+            <div className="w-full max-w-2xl max-h-[85vh] rounded-2xl border border-border bg-card shadow-2xl flex flex-col">
+              <div className="flex items-start justify-between gap-3 p-4 border-b border-border">
+                <h2
+                  id="ai-panel-title"
+                  className="text-sm font-bold text-foreground pr-2"
+                >
+                  {aiPanel.title}
+                </h2>
+                <button
+                  type="button"
+                  onClick={() => setAiPanel(null)}
+                  className="h-9 w-9 shrink-0 rounded-xl bg-secondary flex items-center justify-center"
+                  aria-label="Close"
+                >
+                  <X className="h-5 w-5" />
+                </button>
+              </div>
+              <div className="p-4 overflow-y-auto text-sm text-foreground whitespace-pre-wrap leading-relaxed">
+                {aiPanel.loading ? (
+                  <div className="flex items-center gap-2 text-muted-foreground py-8 justify-center">
+                    <Loader2 className="h-6 w-6 animate-spin" />
+                    Generating…
+                  </div>
+                ) : (
+                  aiPanel.body
+                )}
+              </div>
+            </div>
+          </div>
+        )}
         <header className="flex items-center gap-3 px-5 pt-5 pb-3">
           <button
             onClick={() => setCurrentPage("home")}
@@ -197,16 +353,34 @@ export function SubjectPage({ subject }: { subject: string }) {
 
                   {isExpanded && (
                     <div className="px-4 pb-4 pt-0 border-t border-border/60">
+                      <div className="flex flex-wrap gap-2 mt-3">
+                        <button
+                          type="button"
+                          onClick={() => void summarizeWholeUnit(ch)}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary text-primary-foreground text-xs font-semibold hover:opacity-90"
+                        >
+                          <BookMarked className="h-3.5 w-3.5" />
+                          Summarize whole unit
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => void mcqsForUnit(ch)}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border bg-background text-xs font-semibold hover:bg-secondary"
+                        >
+                          <ListChecks className="h-3.5 w-3.5" />
+                          Random MCQs (unit)
+                        </button>
+                      </div>
                       <div className="flex flex-col gap-1.5 mt-3 max-h-80 overflow-y-auto">
                         {ch.exercises.map((ex) => (
                           <div
                             key={ex.id}
-                            className="flex items-center justify-between gap-2 py-2 px-3 rounded-xl bg-background/60 hover:bg-background/80 transition-colors"
+                            className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 py-2 px-3 rounded-xl bg-background/60 hover:bg-background/80 transition-colors"
                           >
                             <span className="text-sm font-medium text-foreground truncate flex-1">
                               {ex.label}
                             </span>
-                            <div className="flex items-center gap-1.5 shrink-0">
+                            <div className="flex items-center flex-wrap gap-1.5 shrink-0">
                               <a
                                 href={ex.url}
                                 target="_blank"
@@ -224,7 +398,16 @@ export function SubjectPage({ subject }: { subject: string }) {
                                 className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-secondary text-secondary-foreground text-xs font-medium hover:bg-secondary/80 transition-colors"
                               >
                                 <Sparkles className="h-3.5 w-3.5" />
-                                {t("summarizeWithAI")}
+                                AI notes
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  askInChat(ex.label, ex.url, ch.name)
+                                }
+                                className="inline-flex items-center gap-1 px-2 py-1 rounded-lg border border-border text-xs font-medium hover:bg-muted"
+                              >
+                                Chat
                               </button>
                             </div>
                           </div>

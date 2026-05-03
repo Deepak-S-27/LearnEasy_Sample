@@ -1,57 +1,59 @@
 import { NextResponse } from "next/server"
-import { verifyOtp } from "@/lib/otp-store"
-import { updatePassword, findUserByEmail } from "@/lib/user-store"
+import connectDB from "@/lib/mongodb"
+import { UserModel } from "@/lib/models/User"
+import { hashPassword } from "@/lib/password"
+
+export const runtime = "nodejs"
 
 export async function POST(req: Request) {
   try {
+    await connectDB()
+  } catch {
+    return NextResponse.json(
+      { error: "Database unavailable. Set MONGODB_URI in your environment." },
+      { status: 503 }
+    )
+  }
+
+  try {
     const body = await req.json()
-    const { email, otp, newPassword } = body as {
+    const { email, newPassword } = body as {
       email?: string
-      otp?: string
       newPassword?: string
     }
 
-    if (!email?.trim() || !otp || !newPassword) {
+    if (!email?.trim() || !newPassword) {
       return NextResponse.json(
-        { success: false, error: "Email, OTP and new password are required" },
+        { error: "Email and new password are required" },
         { status: 400 }
       )
     }
 
     if (newPassword.length < 6) {
       return NextResponse.json(
-        { success: false, error: "Password must be at least 6 characters" },
+        { error: "Password must be at least 6 characters" },
         { status: 400 }
       )
     }
 
     const normalizedEmail = email.trim().toLowerCase()
-    const result = verifyOtp(normalizedEmail, otp, "forgot_password")
-
-    if (!result.valid) {
-      return NextResponse.json(
-        { success: false, error: "Invalid or expired OTP" },
-        { status: 400 }
-      )
-    }
-
-    const user = findUserByEmail(normalizedEmail)
+    const user = await UserModel.findOne({ email: normalizedEmail })
     if (!user) {
       return NextResponse.json(
-        { success: false, error: "User not found" },
+        { error: "No account found with this email" },
         { status: 404 }
       )
     }
 
-    updatePassword(normalizedEmail, newPassword)
+    user.passwordHash = await hashPassword(newPassword)
+    await user.save()
+
     return NextResponse.json({
       success: true,
       message: "Password reset successfully",
     })
-  } catch {
-    return NextResponse.json(
-      { success: false, error: "Internal server error" },
-      { status: 500 }
-    )
+  } catch (e) {
+    console.error(e)
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 })
   }
 }

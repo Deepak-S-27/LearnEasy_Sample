@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useApp } from "@/lib/app-context"
 import { LanguageSelector } from "@/components/language-selector"
 import Image from "next/image"
@@ -23,6 +23,8 @@ import {
   Handshake,
   UserCircle2,
   ExternalLink,
+  CalendarPlus,
+  Loader2,
   Menu,
   X,
 } from "lucide-react"
@@ -175,54 +177,6 @@ const subjectAssessments = [
   },
 ]
 
-const chapterOneWordQuestionBank: Record<
-  string,
-  { chapter: string; question: string; options: string[]; answer: string }[]
-> = {
-  Mathematics: [
-    {
-      chapter: "Algebra",
-      question: "A polynomial of degree 2 is called?",
-      options: ["Linear", "Quadratic", "Cubic", "Binomial"],
-      answer: "Quadratic",
-    },
-    {
-      chapter: "Calculus",
-      question: "Derivative gives rate of?",
-      options: ["Area", "Change", "Volume", "Mean"],
-      answer: "Change",
-    },
-  ],
-  Physics: [
-    {
-      chapter: "Motion",
-      question: "SI unit of force?",
-      options: ["Joule", "Newton", "Watt", "Pascal"],
-      answer: "Newton",
-    },
-    {
-      chapter: "Waves",
-      question: "Unit of frequency?",
-      options: ["Ohm", "Hertz", "Tesla", "Kelvin"],
-      answer: "Hertz",
-    },
-  ],
-  Chemistry: [
-    {
-      chapter: "Atomic Structure",
-      question: "Negatively charged particle?",
-      options: ["Proton", "Neutron", "Electron", "Photon"],
-      answer: "Electron",
-    },
-    {
-      chapter: "Periodic Table",
-      question: "Group 18 elements are?",
-      options: ["Halogens", "Alkali", "Noble gases", "Lanthanides"],
-      answer: "Noble gases",
-    },
-  ],
-}
-
 export function LandingPage() {
   const { t, setCurrentPage, isLoggedIn, user, setInitialChatMessage } = useApp()
   const [activeTab, setActiveTab] = useState<LandingTab>("home")
@@ -282,6 +236,14 @@ export function LandingPage() {
     const securePrompt = `Start a private and official mentor conversation with ${mentorName} (${mentorRole}). Share my study goals, ask for guidance, and keep this discussion confidential and professional.`
     setInitialChatMessage(securePrompt)
     setCurrentPage("chat")
+  }
+
+  const handleStudyPlan = () => {
+    if (!isAuthenticated) {
+      setCurrentPage("login")
+      return
+    }
+    setCurrentPage("studyPlan")
   }
 
   return (
@@ -398,8 +360,20 @@ export function LandingPage() {
 
       {/* Tab Content */}
       {activeTab === "home" && <HomeSection t={t} onGetStarted={handleGetStarted} onAiHelp={handleAiHelp} />}
-      {activeTab === "course" && <CourseSection t={t} onOpenSubject={handleSubjectOpen} />}
-      {activeTab === "assessment" && <AssessmentSection t={t} />}
+      {activeTab === "course" && (
+        <CourseSection
+          t={t}
+          onOpenSubject={handleSubjectOpen}
+          onOpenStudyPlan={handleStudyPlan}
+        />
+      )}
+      {activeTab === "assessment" && (
+        <AssessmentSection
+          t={t}
+          isLoggedIn={isAuthenticated}
+          onRequireLogin={() => setCurrentPage("login")}
+        />
+      )}
       {activeTab === "scholarship" && <ScholarshipSection t={t} />}
       {activeTab === "mentor" && <MentorSection t={t} onConnect={handleMentorConnect} />}
       {activeTab === "contact" && <ContactSection t={t} />}
@@ -712,9 +686,11 @@ function HomeSection({ t, onGetStarted, onAiHelp }: { t: (key: string) => string
 function CourseSection({
   t,
   onOpenSubject,
+  onOpenStudyPlan,
 }: {
   t: (key: string) => string
   onOpenSubject: (subjectKey: string) => void
+  onOpenStudyPlan: () => void
 }) {
   const [selectedLevel, setSelectedLevel] = useState<"beginner" | "intermediate" | "advanced">(
     "beginner",
@@ -729,6 +705,17 @@ function CourseSection({
   return (
     <section className="py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
+        <div className="flex items-start justify-start mb-6">
+          <button
+            type="button"
+            onClick={onOpenStudyPlan}
+            className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/15 transition-colors"
+          >
+            <CalendarPlus className="h-4 w-4 shrink-0" />
+            + Study plan
+          </button>
+        </div>
+
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground text-balance">
             {t("popularCourses")}{" "}
@@ -816,12 +803,282 @@ function CourseSection({
 }
 
 /* ===== ASSESSMENT SECTION ===== */
-function AssessmentSection({ t }: { t: (key: string) => string }) {
+function AssessmentSection({
+  t,
+  isLoggedIn,
+  onRequireLogin,
+}: {
+  t: (key: string) => string
+  isLoggedIn: boolean
+  onRequireLogin: () => void
+}) {
   const [selectedSubject, setSelectedSubject] = useState<string | null>(null)
   const activeSubject = subjectAssessments.find((item) => item.subject === selectedSubject)
 
+  const [selectedUnit, setSelectedUnit] = useState<string | null>(null)
+  const [mcqLoading, setMcqLoading] = useState(false)
+  const [mcqError, setMcqError] = useState<string | null>(null)
+  const [mcqs, setMcqs] = useState<
+    { question: string; choices: string[]; correctIndex: number; explain?: string }[]
+  >([])
+  const [currentQ, setCurrentQ] = useState(0)
+  const [answers, setAnswers] = useState<number[]>([])
+  const [submitted, setSubmitted] = useState(false)
+  const [computedScore, setComputedScore] = useState<number | null>(null)
+
+  const [gradeOpen, setGradeOpen] = useState(false)
+  const [gradeSubject, setGradeSubject] = useState("")
+  const [gradeTestName, setGradeTestName] = useState("")
+  const [gradeScore, setGradeScore] = useState("32")
+  const [gradeMax, setGradeMax] = useState("40")
+  const [gradeSubmitting, setGradeSubmitting] = useState(false)
+  const [gradeError, setGradeError] = useState<string | null>(null)
+
+  const [packLoading, setPackLoading] = useState<string | null>(null)
+  const [packError, setPackError] = useState<string | null>(null)
+  const [packTab, setPackTab] = useState<"repeated" | "slower50" | "cram24" | null>(null)
+  const [packByMode, setPackByMode] = useState<
+    Partial<Record<"repeated" | "slower50" | "cram24", string>>
+  >({})
+
+  const openGradeModal = (subject: string, testName: string) => {
+    if (!isLoggedIn) {
+      onRequireLogin()
+      return
+    }
+    setGradeSubject(subject)
+    setGradeTestName(testName)
+    setGradeError(null)
+    setGradeOpen(true)
+  }
+
+  const resetMcqState = () => {
+    setMcqError(null)
+    setMcqs([])
+    setCurrentQ(0)
+    setAnswers([])
+    setSubmitted(false)
+    setComputedScore(null)
+  }
+
+  const generateMcqsForUnit = async () => {
+    if (!isLoggedIn) {
+      onRequireLogin()
+      return
+    }
+    if (!activeSubject?.subject || !selectedUnit) return
+
+    setMcqLoading(true)
+    setMcqError(null)
+    resetMcqState()
+    try {
+      const res = await fetch("/api/ai/mcqs-unit", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: activeSubject.subject,
+          unitName: selectedUnit,
+          count: 10,
+        }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        setMcqError((data as { error?: string }).error || "MCQ generation failed")
+        return
+      }
+      const questions = (data as { questions?: unknown }).questions
+      if (!Array.isArray(questions)) {
+        setMcqError("Invalid MCQ format")
+        return
+      }
+      const cleaned = questions
+        .filter((q: any) => q && typeof q.question === "string" && Array.isArray(q.choices))
+        .map((q: any) => ({
+          question: String(q.question),
+          choices: q.choices.map((x: any) => String(x)).slice(0, 4),
+          correctIndex: Number(q.correctIndex) || 0,
+          explain: typeof q.explain === "string" ? q.explain : undefined,
+        }))
+        .filter((q: any) => q.choices.length === 4)
+      if (!cleaned.length) {
+        setMcqError("No MCQs returned")
+        return
+      }
+      setMcqs(cleaned)
+      setAnswers(Array.from({ length: cleaned.length }, () => -1))
+      setCurrentQ(0)
+    } catch {
+      setMcqError("Network error")
+    } finally {
+      setMcqLoading(false)
+    }
+  }
+
+  const chooseAnswer = (idx: number) => {
+    if (submitted) return
+    setAnswers((prev) => {
+      const next = [...prev]
+      next[currentQ] = idx
+      return next
+    })
+  }
+
+  const submitMcqAttempt = async () => {
+    if (!activeSubject?.subject || !selectedUnit) return
+    const max = mcqs.length
+    if (max <= 0) return
+    let score = 0
+    for (let i = 0; i < mcqs.length; i += 1) {
+      if (answers[i] === mcqs[i]!.correctIndex) score += 1
+    }
+    setSubmitted(true)
+    setComputedScore(score)
+    openGradeModal(activeSubject.subject, `${selectedUnit} • MCQ Test`)
+    setGradeScore(String(score))
+    setGradeMax(String(max))
+  }
+
+  const submitGrade = async () => {
+    setGradeSubmitting(true)
+    setGradeError(null)
+    try {
+      const res = await fetch("/api/user/assessments", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          subject: gradeSubject,
+          testName: gradeTestName,
+          score: Number(gradeScore),
+          maxScore: Number(gradeMax),
+        }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        setGradeError((data as { error?: string }).error || "Could not save score")
+        return
+      }
+      setGradeOpen(false)
+    } catch {
+      setGradeError("Network error")
+    } finally {
+      setGradeSubmitting(false)
+    }
+  }
+
+  const fetchPack = async (mode: "repeated" | "slower50" | "cram24") => {
+    if (!isLoggedIn) {
+      onRequireLogin()
+      return
+    }
+    setPackTab(mode)
+    setPackError(null)
+    if (packByMode[mode]) return
+    setPackLoading(mode)
+    try {
+      const focus = activeSubject?.subject ?? "Mathematics, Physics, Chemistry"
+      const res = await fetch("/api/ai/tn-pack", {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode, subjectFocus: focus }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        setPackError((data as { error?: string }).error || "AI request failed")
+        return
+      }
+      const content = typeof (data as { content?: string }).content === "string"
+        ? (data as { content: string }).content
+        : ""
+      setPackByMode((prev) => ({ ...prev, [mode]: content }))
+    } catch {
+      setPackError("Network error")
+    } finally {
+      setPackLoading(null)
+    }
+  }
+
   return (
-    <section className="py-16 lg:py-24">
+    <section className="py-16 lg:py-24 relative">
+      {gradeOpen && (
+        <div
+          className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-black/50 p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="grade-modal-title"
+        >
+          <div className="w-full max-w-md rounded-2xl bg-card border border-border shadow-xl p-5 space-y-4 max-h-[90vh] overflow-y-auto">
+            <h3 id="grade-modal-title" className="text-lg font-bold text-foreground">
+              Log assessment result
+            </h3>
+            <p className="text-xs text-muted-foreground">
+              Scores sync to your profile dashboard so we can suggest careers and spot weak subjects.
+            </p>
+            <label className="block text-xs font-semibold text-muted-foreground">
+              Subject
+              <input
+                className="mt-1 w-full rounded-xl border border-border bg-background px-3 py-2 text-sm"
+                value={gradeSubject}
+                readOnly
+              />
+            </label>
+            <label className="block text-xs font-semibold text-muted-foreground">
+              Test name
+              <input
+                className="mt-1 w-full rounded-xl border border-border bg-background px-3 py-2 text-sm"
+                value={gradeTestName}
+                onChange={(e) => setGradeTestName(e.target.value)}
+              />
+            </label>
+            <div className="grid grid-cols-2 gap-3">
+              <label className="block text-xs font-semibold text-muted-foreground">
+                Score
+                <input
+                  type="number"
+                  min={0}
+                  className="mt-1 w-full rounded-xl border border-border bg-background px-3 py-2 text-sm"
+                  value={gradeScore}
+                  onChange={(e) => setGradeScore(e.target.value)}
+                />
+              </label>
+              <label className="block text-xs font-semibold text-muted-foreground">
+                Out of
+                <input
+                  type="number"
+                  min={1}
+                  className="mt-1 w-full rounded-xl border border-border bg-background px-3 py-2 text-sm"
+                  value={gradeMax}
+                  onChange={(e) => setGradeMax(e.target.value)}
+                />
+              </label>
+            </div>
+            {gradeError && (
+              <p className="text-sm text-destructive">{gradeError}</p>
+            )}
+            <div className="flex gap-2 justify-end pt-2">
+              <button
+                type="button"
+                onClick={() => setGradeOpen(false)}
+                className="px-4 py-2 rounded-xl border border-border text-sm font-semibold"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                disabled={gradeSubmitting}
+                onClick={() => void submitGrade()}
+                className="px-4 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-semibold disabled:opacity-50 inline-flex items-center gap-2"
+              >
+                {gradeSubmitting && <Loader2 className="h-4 w-4 animate-spin" />}
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="max-w-6xl mx-auto px-5 lg:px-8">
         <div className="text-center">
         <div className="h-20 w-20 rounded-3xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
@@ -861,127 +1118,205 @@ function AssessmentSection({ t }: { t: (key: string) => string }) {
         {activeSubject && (
           <div className="bg-blue-50 border border-blue-200 rounded-2xl p-5 mb-8">
             <h3 className="text-xl font-bold text-blue-900 mb-1">
-              {activeSubject.subject} - Chapter Wise Test Assessments
+              {activeSubject.subject} - Unit wise MCQ assessments
             </h3>
             <p className="text-sm text-blue-700 mb-4">
-              Designed for Tamil Nadu State Board Class 12 top-score preparation and college readiness.
+              Select subject → select unit → generate MCQs → attempt → save marks (updates dashboard progress).
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {activeSubject.chapterAssessments.map((chapterTest, idx) => (
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
+              {activeSubject.chapterAssessments.map((unit, idx) => (
                 <button
-                  key={`${activeSubject.subject}-chapter-${idx}`}
+                  key={`${activeSubject.subject}-unit-${idx}`}
                   type="button"
-                  className="text-left rounded-xl bg-white border border-blue-200 p-3 hover:border-blue-400 hover:bg-blue-100 transition-colors"
+                  onClick={() => {
+                    setSelectedUnit(unit)
+                    resetMcqState()
+                  }}
+                  className={`text-left rounded-xl border p-3 transition-colors ${
+                    selectedUnit === unit
+                      ? "bg-blue-600 border-blue-700 text-white"
+                      : "bg-white border-blue-200 hover:border-blue-400 hover:bg-blue-100"
+                  }`}
                 >
-                  <p className="text-sm font-semibold text-blue-900">{chapterTest}</p>
-                  <p className="text-xs text-blue-700 mt-1">Start assessment</p>
+                  <p className={`text-sm font-semibold ${selectedUnit === unit ? "text-white" : "text-blue-900"}`}>
+                    {unit}
+                  </p>
+                  <p className={`text-xs mt-1 ${selectedUnit === unit ? "text-blue-100" : "text-blue-700"}`}>
+                    Open unit
+                  </p>
                 </button>
               ))}
             </div>
 
-            <div className="mt-5">
-              <h4 className="text-base font-semibold text-blue-900 mb-3">
-                Previous Year Question Papers (Below Test Assessments)
-              </h4>
-              <div className="space-y-3 text-sm">
-                <div className="rounded-xl bg-white p-3 border border-blue-200">
-                  <p className="text-blue-900 font-medium">Midterm Papers (2020-now)</p>
-                  <div className="flex flex-wrap gap-1.5 mt-2">
-                    {activeSubject.examPapers.midterm.map((year) => (
-                      <a
-                        key={`${activeSubject.subject}-midterm-${year}`}
-                        href="#"
-                        className="text-xs px-2 py-1 rounded-full border border-blue-200 bg-blue-50 hover:bg-blue-100 transition-colors"
-                      >
-                        {year}
-                      </a>
-                    ))}
+            {selectedUnit && (
+              <div className="rounded-2xl bg-white border border-blue-200 p-4">
+                <div className="flex items-start justify-between gap-3 flex-wrap">
+                  <div>
+                    <p className="text-xs font-semibold text-blue-700">Selected unit</p>
+                    <p className="text-base font-bold text-blue-950">{selectedUnit}</p>
+                    {computedScore != null && (
+                      <p className="text-xs text-blue-700 mt-1">
+                        Last attempt: <span className="font-semibold">{computedScore}/{mcqs.length}</span>
+                      </p>
+                    )}
                   </div>
+                  <button
+                    type="button"
+                    disabled={mcqLoading}
+                    onClick={() => void generateMcqsForUnit()}
+                    className="inline-flex items-center gap-2 rounded-xl bg-blue-600 text-white px-4 py-2 text-sm font-semibold hover:bg-blue-700 disabled:opacity-60"
+                  >
+                    {mcqLoading && <Loader2 className="h-4 w-4 animate-spin" />}
+                    Generate MCQs
+                  </button>
                 </div>
-                <div className="rounded-xl bg-white p-3 border border-blue-200">
-                  <p className="text-blue-900 font-medium">Quarterly Papers (2020-now)</p>
-                  <div className="flex flex-wrap gap-1.5 mt-2">
-                    {activeSubject.examPapers.quarterly.map((year) => (
-                      <a
-                        key={`${activeSubject.subject}-quarterly-${year}`}
-                        href="#"
-                        className="text-xs px-2 py-1 rounded-full border border-blue-200 bg-blue-50 hover:bg-blue-100 transition-colors"
-                      >
-                        {year}
-                      </a>
-                    ))}
+
+                {mcqError && (
+                  <p className="text-sm text-red-700 mt-3">{mcqError}</p>
+                )}
+
+                {mcqs.length > 0 && (
+                  <div className="mt-4 space-y-4">
+                    <div className="flex items-center justify-between text-xs text-blue-800">
+                      <span>
+                        Question {currentQ + 1}/{mcqs.length}
+                      </span>
+                      <span>
+                        Answered {answers.filter((a) => a >= 0).length}/{mcqs.length}
+                      </span>
+                    </div>
+
+                    <div className="rounded-xl border border-blue-200 bg-blue-50/40 p-4">
+                      <p className="text-sm font-semibold text-blue-950 mb-3">
+                        {mcqs[currentQ]!.question}
+                      </p>
+                      <div className="grid grid-cols-1 gap-2">
+                        {mcqs[currentQ]!.choices.map((c, idx) => {
+                          const selected = answers[currentQ] === idx
+                          const correct = submitted && mcqs[currentQ]!.correctIndex === idx
+                          const wrongSelected = submitted && selected && !correct
+                          return (
+                            <button
+                              key={`q${currentQ}-c${idx}`}
+                              type="button"
+                              onClick={() => chooseAnswer(idx)}
+                              className={`text-left rounded-xl border px-3 py-2 text-sm transition-colors ${
+                                correct
+                                  ? "bg-green-50 border-green-300"
+                                  : wrongSelected
+                                    ? "bg-red-50 border-red-300"
+                                    : selected
+                                      ? "bg-blue-600 text-white border-blue-700"
+                                      : "bg-white border-blue-200 hover:bg-blue-100"
+                              }`}
+                            >
+                              {String.fromCharCode(65 + idx)}. {c}
+                            </button>
+                          )
+                        })}
+                      </div>
+                      {submitted && mcqs[currentQ]!.explain && (
+                        <p className="text-xs text-blue-900 mt-3 whitespace-pre-wrap">
+                          <span className="font-semibold">Why:</span> {mcqs[currentQ]!.explain}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 justify-between">
+                      <div className="flex gap-2">
+                        <button
+                          type="button"
+                          disabled={currentQ === 0}
+                          onClick={() => setCurrentQ((p) => Math.max(0, p - 1))}
+                          className="px-3 py-2 rounded-xl border border-blue-200 text-sm font-semibold text-blue-900 bg-white disabled:opacity-50"
+                        >
+                          Previous
+                        </button>
+                        <button
+                          type="button"
+                          disabled={currentQ >= mcqs.length - 1}
+                          onClick={() => setCurrentQ((p) => Math.min(mcqs.length - 1, p + 1))}
+                          className="px-3 py-2 rounded-xl border border-blue-200 text-sm font-semibold text-blue-900 bg-white disabled:opacity-50"
+                        >
+                          Next
+                        </button>
+                      </div>
+
+                      <div className="flex gap-2">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            resetMcqState()
+                            void generateMcqsForUnit()
+                          }}
+                          className="px-3 py-2 rounded-xl border border-blue-200 text-sm font-semibold text-blue-900 bg-white"
+                        >
+                          Regenerate
+                        </button>
+                        <button
+                          type="button"
+                          disabled={submitted || answers.some((a) => a < 0)}
+                          onClick={() => void submitMcqAttempt()}
+                          className="px-4 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-semibold disabled:opacity-50"
+                        >
+                          Submit &amp; save marks
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="rounded-xl bg-white p-3 border border-blue-200">
-                  <p className="text-blue-900 font-medium">Half-yearly Papers (2020-now)</p>
-                  <div className="flex flex-wrap gap-1.5 mt-2">
-                    {activeSubject.examPapers.halfYearly.map((year) => (
-                      <a
-                        key={`${activeSubject.subject}-half-${year}`}
-                        href="#"
-                        className="text-xs px-2 py-1 rounded-full border border-blue-200 bg-blue-50 hover:bg-blue-100 transition-colors"
-                      >
-                        {year}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-                <div className="rounded-xl bg-white p-3 border border-blue-200">
-                  <p className="text-blue-900 font-medium">Public Exam Papers (2020-now)</p>
-                  <div className="flex flex-wrap gap-1.5 mt-2">
-                    {activeSubject.examPapers.publicExam.map((year) => (
-                      <a
-                        key={`${activeSubject.subject}-public-${year}`}
-                        href="#"
-                        className="text-xs px-2 py-1 rounded-full border border-blue-200 bg-blue-50 hover:bg-blue-100 transition-colors"
-                      >
-                        {year}
-                      </a>
-                    ))}
-                  </div>
-                </div>
+                )}
               </div>
+            )}
+
+            <div className="mt-5 rounded-xl border border-blue-300 bg-white/80 p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <Sparkles className="h-4 w-4 text-blue-700" />
+                <h4 className="text-base font-semibold text-blue-900">
+                  AI coaching from question-paper patterns
+                </h4>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onClick={() => void fetchPack("repeated")}
+                  className="text-xs font-semibold px-3 py-1.5 rounded-full bg-blue-600 text-white hover:bg-blue-700"
+                >
+                  Repeated topics
+                </button>
+                <button
+                  type="button"
+                  onClick={() => void fetchPack("slower50")}
+                  className="text-xs font-semibold px-3 py-1.5 rounded-full border border-blue-400 text-blue-900 hover:bg-blue-100"
+                >
+                  Slower learner → ~50%
+                </button>
+                <button
+                  type="button"
+                  onClick={() => void fetchPack("cram24")}
+                  className="text-xs font-semibold px-3 py-1.5 rounded-full border border-blue-400 text-blue-900 hover:bg-blue-100"
+                >
+                  Last 24h cram
+                </button>
+              </div>
+              {packError && (
+                <p className="mt-3 text-xs text-red-700">{packError}</p>
+              )}
+              {packTab && (
+                <div className="mt-3 rounded-lg border border-blue-200 bg-blue-50/60 p-3 max-h-72 overflow-y-auto text-xs text-blue-950 whitespace-pre-wrap leading-relaxed">
+                  {packLoading === packTab ? (
+                    <span className="inline-flex items-center gap-2 text-blue-800">
+                      <Loader2 className="h-4 w-4 animate-spin shrink-0" />
+                      Generating…
+                    </span>
+                  ) : (
+                    packByMode[packTab] || ""
+                  )}
+                </div>
+              )}
             </div>
           </div>
         )}
-
-        <div className="mt-8 bg-card rounded-2xl border border-border p-5">
-          <div className="flex items-center gap-2 mb-4">
-            <Sparkles className="h-4 w-4 text-primary" />
-            <h3 className="text-lg font-bold text-foreground">
-              Chapter-wise One Word Answers (Auto MCQ Set)
-            </h3>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {Object.entries(chapterOneWordQuestionBank).map(([subject, questions]) => (
-              <div key={subject} className="rounded-xl bg-secondary/60 p-4">
-                <p className="text-base font-semibold text-foreground mb-3">{subject}</p>
-                <div className="space-y-3">
-                  {questions.map((q, idx) => (
-                    <div key={`${subject}-${idx}`} className="rounded-lg bg-background border border-border p-3">
-                      <p className="text-xs font-medium text-muted-foreground mb-1">{q.chapter}</p>
-                      <p className="text-sm font-medium text-foreground">{q.question}</p>
-                      <div className="flex flex-wrap gap-1.5 mt-2">
-                        {q.options.map((option) => (
-                          <span
-                            key={`${subject}-${idx}-${option}`}
-                            className={`text-xs px-2 py-1 rounded-full border ${
-                              option === q.answer
-                                ? "bg-primary/10 text-primary border-primary/30"
-                                : "bg-background text-muted-foreground border-border"
-                            }`}
-                          >
-                            {option}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   )
@@ -1079,12 +1414,44 @@ function ScholarshipSection({ t }: { t: (key: string) => string }) {
 }
 
 /* ===== MENTOR SECTION ===== */
+type ApprovedMentor = {
+  userId: string
+  name: string
+  qualification?: string
+  experience?: string
+  linkedin_url?: string
+}
+
 function MentorSection({ t, onConnect }: { t: (key: string) => string; onConnect: (name: string, role: string) => void }) {
-  const mentors = [
-    { name: "Ananya Rao", role: "Data Analyst Mentor", score: "98%", image: "/mentor-ananya.svg" },
-    { name: "Vikram S", role: "Previous Year Topper", score: "97%", image: "/mentor-vikram.svg" },
-    { name: "Meera K", role: "Senior Student Mentor", score: "96%", image: "/mentor-meera.svg" },
-  ]
+  const [mentors, setMentors] = useState<ApprovedMentor[]>([])
+  const [loading, setLoading] = useState(true)
+  const [loadError, setLoadError] = useState<string | null>(null)
+
+  useEffect(() => {
+    let cancelled = false
+    setLoading(true)
+    setLoadError(null)
+    fetch("/api/mentors/approved")
+      .then((r) => {
+        if (!r.ok) throw new Error("Failed to load mentors")
+        return r.json()
+      })
+      .then((data: { mentors?: ApprovedMentor[] }) => {
+        if (!cancelled) setMentors(Array.isArray(data.mentors) ? data.mentors : [])
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setLoadError("Could not load mentors right now.")
+          setMentors([])
+        }
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false)
+      })
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   return (
     <section className="py-16 lg:py-24">
@@ -1101,33 +1468,79 @@ function MentorSection({ t, onConnect }: { t: (key: string) => string; onConnect
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {mentors.map((mentor) => (
-            <div key={mentor.name} className="bg-card rounded-2xl border border-border p-5">
-              <div className="relative h-36 w-full rounded-xl overflow-hidden mb-4 border border-border/60">
-                <Image
-                  src={mentor.image}
-                  alt={mentor.name}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <p className="text-base font-bold text-foreground">{mentor.name}</p>
-              <p className="text-sm text-muted-foreground mt-1">{mentor.role}</p>
-              <p className="text-xs text-primary mt-2">Highest score: {mentor.score}</p>
-              <button
-                type="button"
-                className="mt-4 w-full h-10 rounded-xl bg-secondary text-secondary-foreground text-sm font-semibold hover:bg-blue-600 hover:text-white transition-colors"
-                onClick={() => onConnect(mentor.name, mentor.role)}
-              >
-                {t("connectNow")}
-              </button>
-              <p className="text-[11px] text-muted-foreground mt-2">
-                Private and official mentoring messages only.
-              </p>
-            </div>
-          ))}
-        </div>
+        {loading && (
+          <div className="flex justify-center py-16">
+            <Loader2 className="h-9 w-9 animate-spin text-primary" aria-label="Loading mentors" />
+          </div>
+        )}
+
+        {!loading && loadError && (
+          <p className="text-center text-sm text-muted-foreground py-8">{loadError}</p>
+        )}
+
+        {!loading && !loadError && mentors.length === 0 && (
+          <div className="rounded-2xl border border-border bg-secondary/40 px-6 py-12 text-center max-w-xl mx-auto">
+            <UserCircle2 className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+            <p className="text-base font-semibold text-foreground mb-2">
+              Verified mentors coming soon
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Approved mentors will appear here for students to connect with — check back after our team verifies applications.
+            </p>
+          </div>
+        )}
+
+        {!loading && mentors.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {mentors.map((mentor) => {
+              const connectContext =
+                mentor.qualification?.trim() ||
+                mentor.experience?.trim().slice(0, 120) ||
+                "Approved mentor"
+              return (
+                <div key={mentor.userId} className="bg-card rounded-2xl border border-border p-5">
+                  <div className="h-36 w-full rounded-xl mb-4 border border-border/60 bg-gradient-to-br from-primary/15 via-secondary to-primary/5 flex flex-col items-center justify-center px-4">
+                    <UserCircle2 className="h-14 w-14 text-primary/80 mb-2" />
+                    <p className="text-lg font-bold text-foreground text-center leading-tight">
+                      {mentor.name}
+                    </p>
+                  </div>
+                  {mentor.qualification?.trim() && (
+                    <p className="text-sm font-semibold text-foreground">
+                      {mentor.qualification.trim()}
+                    </p>
+                  )}
+                  {mentor.experience?.trim() && (
+                    <p className="text-xs text-muted-foreground mt-2 line-clamp-5">
+                      {mentor.experience.trim()}
+                    </p>
+                  )}
+                  {mentor.linkedin_url && (
+                    <a
+                      href={mentor.linkedin_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" />
+                      Portfolio / LinkedIn
+                    </a>
+                  )}
+                  <button
+                    type="button"
+                    className="mt-4 w-full h-10 rounded-xl bg-secondary text-secondary-foreground text-sm font-semibold hover:bg-blue-600 hover:text-white transition-colors"
+                    onClick={() => onConnect(mentor.name, connectContext)}
+                  >
+                    {t("connectNow")}
+                  </button>
+                  <p className="text-[11px] text-muted-foreground mt-2">
+                    Private and official mentoring messages only.
+                  </p>
+                </div>
+              )
+            })}
+          </div>
+        )}
       </div>
     </section>
   )

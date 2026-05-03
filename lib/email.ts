@@ -11,21 +11,25 @@ export type SendOtpResult = { success: true } | { success: false; error: string 
 export async function sendOtpEmail(
   to: string,
   otp: string,
-  purpose: "login" | "signup" | "forgot_password"
+  purpose: "login" | "signup" | "forgot_password" | "mentor_verify"
 ): Promise<SendOtpResult> {
   const subject =
     purpose === "forgot_password"
       ? "LearnEasy - Reset your password"
       : purpose === "signup"
         ? "LearnEasy - Verify your email"
-        : "LearnEasy - Your login code"
+        : purpose === "mentor_verify"
+          ? "LearnEasy - Mentor profile verification code"
+          : "LearnEasy - Your login code"
 
   const body =
     purpose === "forgot_password"
       ? `Use this code to reset your password: ${otp}. It expires in 10 minutes.`
       : purpose === "signup"
         ? `Welcome to LearnEasy! Your verification code is: ${otp}. It expires in 10 minutes.`
-        : `Your login verification code is: ${otp}. It expires in 10 minutes.`
+        : purpose === "mentor_verify"
+          ? `Your mentor profile verification code is: ${otp}. Enter it on the Complete Mentor Profile page. It expires in 15 minutes.`
+          : `Your login verification code is: ${otp}. It expires in 10 minutes.`
 
   const html = `
     <div style="font-family: sans-serif; max-width: 480px; margin: 0 auto;">
@@ -57,7 +61,51 @@ export async function sendOtpEmail(
     }
   }
 
-  // 2. Nodemailer SMTP (Gmail, Outlook, etc.)
+  // 2. Brevo (Sendinblue) transactional email via API key
+  const brevoKey = process.env.BREVO_API_KEY
+  if (brevoKey) {
+    try {
+      const fromEmail =
+        process.env.BREVO_FROM_EMAIL || process.env.SMTP_FROM || "no-reply@learneasy.local"
+      const fromName = process.env.BREVO_FROM_NAME || "LearnEasy"
+
+      const resp = await fetch("https://api.brevo.com/v3/smtp/email", {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          "content-type": "application/json",
+          "api-key": brevoKey,
+        },
+        body: JSON.stringify({
+          sender: { name: fromName, email: fromEmail },
+          to: [{ email: to }],
+          subject,
+          htmlContent: html,
+          textContent: body,
+        }),
+      })
+
+      if (!resp.ok) {
+        let detail = ""
+        try {
+          const j = (await resp.json()) as { message?: string; code?: string }
+          detail = j?.message || j?.code || ""
+        } catch {
+          // ignore
+        }
+        return {
+          success: false,
+          error: `Brevo email send failed (${resp.status})${detail ? `: ${detail}` : ""}`,
+        }
+      }
+      return { success: true }
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Failed to send email"
+      return { success: false, error: msg }
+    }
+  }
+
+  // 3. Nodemailer SMTP (Gmail, Outlook, etc.)
   const host = process.env.SMTP_HOST
   const user = process.env.SMTP_USER
   const pass = process.env.SMTP_PASS
@@ -85,7 +133,7 @@ export async function sendOtpEmail(
     }
   }
 
-  // 3. Ethereal (test inbox) - no real email delivery, but you get a preview URL.
+  // 4. Ethereal (test inbox) - no real email delivery, but you get a preview URL.
   if (process.env.USE_ETHEREAL === "true") {
     try {
       const nodemailer = await import("nodemailer")

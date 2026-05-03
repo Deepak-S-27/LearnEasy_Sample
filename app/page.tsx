@@ -4,14 +4,16 @@ import { AppProvider, useApp } from "@/lib/app-context"
 import { LandingPage } from "@/components/landing-page"
 import { LoginPage } from "@/components/login-page"
 import { SignupPage } from "@/components/signup-page"
-import { DashboardPage } from "@/components/dashboard-page"
 import { SubjectPage } from "@/components/subject-page"
 import { ChatPage } from "@/components/chat-page"
 import { ProfilePage } from "@/components/profile-page"
 import { ForgotPasswordPage } from "@/components/forgot-password-page"
+import { StudyPlanPage } from "@/components/study-plan-page"
+import { MentorSignupPage } from "@/components/mentor-signup-page"
+import { MentorOnboardingPage } from "@/components/mentor-onboarding-page"
 
 function AppContent() {
-  const { isLoggedIn, currentPage } = useApp()
+  const { isLoggedIn, currentPage, user } = useApp()
 
   if (!isLoggedIn) {
     if (currentPage === "login") {
@@ -20,10 +22,21 @@ function AppContent() {
     if (currentPage === "signup") {
       return <SignupPage />
     }
+    if (currentPage === "mentorSignup") {
+      return <MentorSignupPage />
+    }
     if (currentPage === "forgotPassword") {
       return <ForgotPasswordPage />
     }
     return <LandingPage />
+  }
+
+  const mentorIncomplete =
+    user?.role === "mentor" &&
+    user.mentorReviewStatus !== "approved"
+
+  if (mentorIncomplete) {
+    return <MentorOnboardingPage />
   }
 
   const renderPage = () => {
@@ -37,6 +50,8 @@ function AppContent() {
         // After login, show the same experience as the public landing page,
         // but personalized in the header with the student's name.
         return <LandingPage />
+      case "studyPlan":
+        return <StudyPlanPage />
       case "chat":
         return <ChatPage />
       case "profile":
